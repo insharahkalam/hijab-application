@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="bg-[#e9a1a3] text-white text-sm">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+
+            <div class="flex gap-4">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <p class="hidden md:block text-xs tracking-wide">
+                ENJOY FREE SHIPPING ON US ORDERS OVER $50
+            </p>
+
+            <div class="flex items-center gap-2 text-xs">
+                <span>UNITED STATES (USD $)</span>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="bg-[#f6efed] border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- LOGO -->
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-full bg-[#e9a1a3]"></div>
+                <span class="font-playfair text-3xl font-semibold">Jamila</span>
+            </div>
+
+            <!-- RIGHT INFO -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Track order</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(+021) 345 678 910</span>
+                </div>
+                <div class="flex items-center gap-4 text-base">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-regular fa-user"></i>
+                    <div class="relative">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span
+                            class="absolute -top-2 -right-2 text-xs bg-[#e9a1a3] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="lg:hidden text-xl" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="hidden lg:block border-t bg-[#f6efed]">
+            <ul class="max-w-7xl mx-auto px-10 py-4 flex gap-8 font-poppins text-sm font-medium">
+
+                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
+
+                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
+
+                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
+                    <a href="shop.html">SHOP</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
+
+                <li class="text-[#e9a1a3] flex items-center gap-1">
+                    <a href="blog.html">BLOG</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
+
+                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
+
+                <li><a href="FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
+
+                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#f6efed] border-t">
+            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
+
+                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
+
+                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
+
+                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
+                    <a href="shop.html">SHOP</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
+
+                <li class="text-[#e9a1a3] flex items-center gap-1">
+                    <a href="blog.html">BLOG</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
+
+                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
+
+                <li><a href="FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
+
+                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- Header -->
+    <section class="relative flex flex-col items-center justify-center
+         min-h-[55vh]
+         bg-[#F7E0E1]
+         text-center
+         px-6 overflow-hidden">
+
+        <!-- subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-20
+           bg-[radial-gradient(circle_at_1px_1px,#e7bcbc_1px,transparent_1px)]
+           bg-[size:22px_22px]">
+        </div>
+
+        <!-- content -->
+        <div class="relative z-10">
+            <div class="flex flex-col items-center gap-3 mb-6">
+
+                <span class="w-12 h-[1px] bg-[#E5989B]"></span>
+                <span class="text-sm font-bold tracking-[0.35em] text-[#E5989B]">
+                    FAQ
+                </span>
+                <span class="w-12 h-[1px] bg-[#E5989B]"></span>
+
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl
+             font-playfair font-normal
+             mb-6 text-black">
+                FAQ
+            </h1>
+
+            <p class="text-[#E5989B] font-playfair font-extrabold tracking-wider">
+                Home <span class="mx-3">›</span> FAQ
+            </p>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="flex flex-col-reverse lg:flex-row min-h-screen">
+
+        <!-- LEFT -->
+        <div class="flex-1 bg-[#6B6572] text-white">
+            <div class="h-full flex flex-col justify-center px-8 lg:px-10">
+                <span class="tracking-widest text-sm opacity-80 mb-4">FAQ</span>
+
+                <h2 class="text-4xl lg:text-[60px] font-light mb-6 font-playfair">
+                    Ask Questions
+                </h2>
+
+                <p class="max-w-[525px] leading-relaxed opacity-90 mb-10 font-poppins">
+                    Lorem ipsum dolor sit amet consectetur. Montes quisque urna molestie
+                    tincidunt aliquet quam. Imperdiet at pellent esque vitae aliquet tempor
+                    eget rutrum tellus. Leo a luctus vitae.
+                </p>
+
+                <button class="w-fit px-10 py-5 rounded-full bg-[#E5989B]
+        font-bold text-sm tracking-wider hover:bg-[#d89090] transition">
+                    SEND US MESSAGE
+                </button>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex-1">
+            <img src="./images/scarf-img.png" class="w-full h-full object-cover" alt="">
+        </div>
+
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-20">
+
+        <!-- Heading -->
+        <h2 class="text-5xl font-playfair text-center mb-12">General</h2>
+
+        <!-- FAQ -->
+        <div class="space-y-6">
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(0)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(5)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(6)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="faq-item border-b pb-6">
+                <button onclick="toggleFaq(7)" class="w-full flex justify-between items-center text-left">
+                    <span class="font-poppins text-lg italic font-semibold">
+                        What types of hijabs do you offer in your store?
+                    </span>
+                    <span class="faq-icon text-2xl transition-transform duration-300">+</span>
+                </button>
+
+                <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                    <div class="overflow-hidden mt-4 text-gray-600 font-poppins
+                opacity-0 translate-y-2 transition-all duration-500">
+                        Our store offers a wide range of hijabs, including classic styles,
+                        everyday wear, trendy options, and exclusive designs.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bottom Feature Bar -->
+    <section class="bg-[#fbf1ea] py-14 px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-center">
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Unparalleled Quality</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Made with a Mission</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Community Come First</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Free Shipping</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <footer class="bg-black text-gray-200 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Top Section: Newsletter -->
+            <div class="text-center mb-16">
+                <p class="text-[20px] tracking-widest text-[#ffb4a2] uppercase mb-2">Sign Up To Our Email</p>
+                <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-4">
+                    Subscribers List & Receive <br> <span class="text-[#ffb4a2] text-6x1">25% OFF</span>
+                </h2>
+                <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full sm:w-1/2 px-6 py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
+                    <button type="submit"
+                        class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+
+            <!-- Links Section -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 text-center sm:text-left mb-12">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">Jamila</h3>
+                    <ul class="space-y-2 text-gray-400 text-[18px]">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Campaigns</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Press Release</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Career</a></li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">FAQ</h3>
+                    <ul class="space-y-2 text-[18px] text-gray-400">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Popular Questions</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Order</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Split Orders</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Shipping and Delivery</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Payment Methods</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2 text-[18px] text-gray-400">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Veiled Rewards</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Reviews</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Our Brand</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">Community</h3>
+                    <ul class="space-y-2 text-[18px] text-gray-400">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Jamila Workshop</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Rewards</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Style Guide</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Ethics & Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h3 class="font-serif text-lg font-semibold mb-4">Follow Us</h3>
+                    <p class="text-gray-400 text-md mb-4">
+                        Montes quisque urna molestie tincidunt aliquet quam. Imper dietat pellentesque vitae aliquet.
+                    </p>
+                    <div class="flex gap-4 justify-center sm:justify-start text-md">
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-facebook-f "></i></a>
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-500 text-md">
+                &copy; 2025 Jamila. Design by ThemeWarrior
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+    <script>
+        function toggleFaq(index) {
+            const items = document.querySelectorAll(".faq-item");
+
+            items.forEach((item, i) => {
+                const wrapper = item.querySelector(".faq-content");
+                const content = wrapper.querySelector("div");
+                const icon = item.querySelector(".faq-icon");
+                const btn = item.querySelector("button");
+
+                const isOpen = wrapper.classList.contains("grid-rows-[1fr]");
+
+                // close all
+                wrapper.classList.remove("grid-rows-[1fr]");
+                wrapper.classList.add("grid-rows-[0fr]");
+                content.classList.add("opacity-0", "translate-y-2");
+                icon.textContent = "+";
+                btn.classList.remove("text-pink-400");
+
+                // open clicked
+                if (i === index && !isOpen) {
+                    wrapper.classList.remove("grid-rows-[0fr]");
+                    wrapper.classList.add("grid-rows-[1fr]");
+                    content.classList.remove("opacity-0", "translate-y-2");
+                    icon.textContent = "−";
+                    btn.classList.add("text-pink-400");
+                }
+            });
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

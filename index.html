@@ -9,67 +9,883 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 
-<body>
 
+<body class="bg-white">
 
-    <nav class="w-full z-20 top-0 start-0 border-b border-default">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a class="flex items-center " href="index.html"><img width="50" height="90" src="./logo.png" alt=""><span class="text-2xl font-semibold">HIJAB STORE</span></a>
-            <button data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
-                aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
-                            aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Pricing</a>
-                    </li>
-                    <li>
-                        <a href="signup.html"
-                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"><i
-                                class="fa-regular fa-user"></i></a>
-                    </li>
-                </ul>
+    <!-- TOP BAR -->
+    <div class="bg-[#e9a1a3] text-white text-sm">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+
+            <div class="flex gap-4">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <p class="hidden md:block text-xs tracking-wide">
+                ENJOY FREE SHIPPING ON US ORDERS OVER $50
+            </p>
+
+            <div class="flex items-center gap-2 text-xs">
+                <span>UNITED STATES (USD $)</span>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="bg-[#f6efed] border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- LOGO -->
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-full bg-[#e9a1a3]"></div>
+                <span class="font-playfair text-3xl font-semibold">Jamila</span>
+            </div>
+
+            <!-- RIGHT INFO -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Track order</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(+021) 345 678 910</span>
+                </div>
+                <div class="flex items-center gap-4 text-base">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="signup.html"> <i class="fa-regular fa-user"></i></a>
+                    <div class="relative">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span
+                            class="absolute -top-2 -right-2 text-xs bg-[#e9a1a3] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="lg:hidden text-xl" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="hidden lg:block border-t bg-[#f6efed]">
+            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
+
+                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
+
+                <li><a href="/about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
+
+                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
+                    <a href="/shop.html">SHOP</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li><a href="/pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
+
+                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
+                    <a href="/pages.html">PAGES</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li class="text-[#e9a1a3] flex items-center gap-1">
+                    <a href="/blog.html">BLOG</a>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </li>
+
+                <li><a href="/team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
+
+                <li><a href="/testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
+
+                <li><a href="/FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
+
+                <li><a href="/contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#f6efed] border-t">
+            <ul class="flex flex-col gap-4 px-6 py-6 font-poppins text-sm">
+                <li><a href="/" class="block">HOME</a></li>
+                <li><a href="/about.html" class="block">ABOUT</a></li>
+                <li><a href="/shop.html" class="block">SHOP</a></li>
+                <li><a href="/pricing.html" class="block">PRICING</a></li>
+                <li><a href="/pages.html" class="block">PAGES</a></li>
+                <li><a href="/blog.html" class="block text-[#e9a1a3]">BLOG</a></li>
+                <li><a href="/team.html" class="block">OUR TEAM</a></li>
+                <li><a href="/faq.html" class="block">FAQ</a></li>
+                <li><a href="/contact.html" class="block">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <!-- ===== Hero Section ===== -->
+    <section class="relative h-[88vh] w-full">
+
+        <!-- Background Image -->
+        <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/team-sect.jpg"
+            class="absolute inset-0 w-full h-full object-cover" alt="Hijab Fashion">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/35"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+            <div class="max-w-xl text-white">
+
+                <h1 class="text-5xl md:text-6xl leading-tight">
+                    Summer Clearance <br> Events Extra
+                </h1>
+
+                <p class="mt-6 text-4xl text-rose-300">
+                    30% OFF
+                </p>
+
+                <p class="mt-4 text-lg font-sans text-gray-100 max-w-md">
+                    Up to 80% off sitewide with items as low as $5.99. While items last.
+                </p>
+
+                <button
+                    class="mt-8 bg-rose-300 hover:bg-rose-400 transition text-white px-8 py-3 rounded-full tracking-widest font-sans text-sm">
+                    SHOP NOW
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- New Products Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <!-- Small label -->
+            <p class="text-sm tracking-widest text-rose-400 uppercase mb-4">
+                New Product
+            </p>
+
+            <!-- Heading -->
+            <h2 class="text-4xl md:text-5xl font-serif text-gray-900">
+                Shop New Hijabs
+            </h2>
+
+            <!-- Description -->
+            <p class="mt-6 max-w-2xl mx-auto text-gray-500 leading-relaxed">
+                Lorem ipsum dolor sit amet consec contes quisque urna molestie
+                tincidunt aliquet quam. Imperdiet at pellent esque vitae aliquet
+                tempor eget rutrum tellus.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- Product Card -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-1.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-pink-500 font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-pink-300 text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-2.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-pink-500 font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-pink-300 text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-3.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-pink-500 font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-pink-300 text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-4-300x300.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-pink-500 font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-pink-300 text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+            </div>
+
+    </section>
+
+    <section class="relative min-h-screen flex items-center">
+
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+
+        <!-- Image -->
+        <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/banner-first-collection.jpg"
+            class="absolute right-0 top-0 h-full w-1/2 object-cover hidden md:block" alt="Hijab Model" />
+
+        <!-- Content -->
+        <div class="relative z-20 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- Left Content -->
+            <div class="text-white">
+                <p class="text-pink-400 uppercase tracking-widest mb-4 text-sm">
+                    Drive Into Style With
+                </p>
+
+                <h1 class="text-4xl md:text-6xl font-serif leading-tight mb-6">
+                    Our First Ever Hijab <br />
+                    Collections
+                </h1>
+
+                <p class="text-gray-300 max-w-lg mb-8">
+                    Lorem ipsum dolor sit amet consectetur. Montes quisque urna molestie
+                    tincidunt aliquet quam. Imperdiet at pellentesque vitae aliquet tempor
+                    eget rutrum tellus. Leo a luctus vitae.
+                </p>
+
+                <button class="bg-[#e5989b] text-white px-10 py-4 rounded-full font-semibold
+                     hover:bg-pink-400 transition">
+                    SHOP THE SALE
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- New Products Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <!-- Small label -->
+            <p class="text-sm tracking-widest text-rose-400 uppercase mb-4">
+                best seller
+            </p>
+
+            <!-- Heading -->
+            <h2 class="text-4xl md:text-5xl font-serif text-gray-900">
+                Our Best Sellers
+            </h2>
+
+            <!-- Description -->
+            <p class="mt-6 max-w-2xl mx-auto text-gray-500 leading-relaxed">
+                Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet quam. Imperdiet at
+                pellent esque vitae aliquet tempor eget rutrum tellus.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- Product Card -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-1.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-2.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-3.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-4-300x300.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+                <!-- Card 5 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-5.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+                <!-- Card 6 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-6.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+                <!-- Card 7 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-7-300x300.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+                <!-- Card 8 -->
+                <div class="text-center">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-8.jpg"
+                        class="w-full h-[360px] object-cover rounded-lg" alt="Hijab">
+
+                    <h3 class="mt-5 text-lg font-medium">Cape Town Garden Hijab</h3>
+
+                    <p class="mt-2">
+                        <span class="text-gray-400 line-through mr-2">$40</span>
+                        <span class="text-[#e5989b] font-semibold">$23</span>
+                    </p>
+
+                    <button class="mt-4 px-8 py-3 bg-[#e5989b] text-white rounded-full
+                       hover:bg-pink-400 transition">
+                        ADD TO CART
+                    </button>
+                </div>
+
+            </div>
+
+
+    </section>
+
+    <section class="w-full min-h-screen grid grid-cols-1 md:grid-cols-2">
+
+        <!-- Left Image -->
+        <div class="h-[500px] md:h-auto">
+            <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/about.jpg"
+                alt="Hijab Model" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Right Content -->
+        <div class="flex items-center bg-black px-8 md:px-16 py-16">
+            <div class="max-w-lg text-white">
+
+                <p class="text-pink-400 uppercase tracking-widest mb-4 text-sm">
+                    About
+                </p>
+
+                <h2 class="text-4xl md:text-5xl font-serif leading-tight mb-6">
+                    Empower & <br /> Inspire
+                </h2>
+
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Lorem ipsum dolor sit amet consectetur. Montes quisque urna molestie
+                    tincidunt aliquet quam. Imperdiet at pellentesque vitae aliquet tempor
+                    eget rutrum tellus. Leo a luctus vitae.
+                </p>
+
+                <p class="font-semibold mb-8">
+                    From the bottom of our hearts, thank you!
+                </p>
+
+                <button class="bg-pink-300 text-white px-10 py-4 rounded-full font-semibold
+               hover:bg-pink-400 transition">
+                    LEARN MORE
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Heading -->
+    <div class="text-center py-12 px-4">
+
+    </div>
+
+    <!-- Cards Container -->
+    <div class="flex flex-wrap justify-center gap-6 px-4 pb-12">
+
+        <!-- Card 1 -->
+        <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
+            <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category1.jpg"
+                alt="Weekly Drop"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                <h3 class="text-white text-xl font-serif mb-2">The Weekly Drop</h3>
+                <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie
+                    tincidunt aliquet quam</p>
+                <button
+                    class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
+                    The Weekly Drop
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
+            <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2.jpg"
+                alt="Shop By Color"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                <h3 class="text-white text-xl font-serif mb-2">Shop By Color</h3>
+                <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie
+                    tincidunt aliquet quam</p>
+                <button
+                    class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
+                    The Weekly Drop
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
+            <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2-1.jpg"
+                alt="New to Hijab"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
+                <h3 class="text-white text-xl font-serif mb-2">New to Hijab?</h3>
+                <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie
+                    tincidunt aliquet quam</p>
+                <button
+                    class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
+                    The Weekly Drop
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <section class="py-20 px-6 lg:px-20">
+
+        <!-- Top Heading -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-[#e05a47] text-xs tracking-[3px] uppercase block mb-4">
+                TESTIMONIALS
+            </span>
+
+            <h2 class="font-playfair text-4xl md:text-5xl mb-6">
+                This is Why We Do What We Do
+            </h2>
+
+            <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+                Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet
+                quam. Imperdiet at pellent esque vitae aliquet tempor eget rutrum tellus.
+            </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-[#fbf1ea] p-8 relative">
+                <h3 class="font-playfair text-2xl mb-4">
+                    I absolutely love shopping at this hijab store!
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                    The collection is diverse, stylish, and caters to various occasions.
+                    The quality of the hijabs is exceptional, and I always receive
+                    compliments when wearing them. It’s become my go-to place for all my hijab needs.
+                </p>
+
+                <div class="flex items-center gap-4">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-8-249x300.jpg"
+                        class="w-12 h-12 rounded-full object-cover" alt="">
+                    <div>
+                        <p class="font-medium">Sara A.</p>
+                        <p class="text-xs tracking-widest text-[#e05a47] uppercase">Business</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-[#fbf1ea] p-8 relative">
+                <h3 class="font-playfair text-2xl mb-4">
+                    I absolutely love shopping at this hijab store!
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                    The collection is diverse, stylish, and caters to various occasions.
+                    The quality of the hijabs is exceptional, and I always receive
+                    compliments when wearing them. It’s become my go-to place for all my hijab needs.
+                </p>
+
+                <div class="flex items-center gap-4">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-5-249x300.jpg"
+                        class="w-12 h-12 rounded-full object-cover" alt="">
+                    <div>
+                        <p class="font-medium">Sara A.</p>
+                        <p class="text-xs tracking-widest text-[#e05a47] uppercase">Business</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-[#fbf1ea] p-8 relative">
+                <h3 class="font-playfair text-2xl mb-4">
+                    I absolutely love shopping at this hijab store!
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                    The collection is diverse, stylish, and caters to various occasions.
+                    The quality of the hijabs is exceptional, and I always receive
+                    compliments when wearing them. It’s become my go-to place for all my hijab needs.
+                </p>
+
+                <div class="flex items-center gap-4">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-7-249x300.jpg"
+                        class="w-12 h-12 rounded-full object-cover" alt="">
+                    <div>
+                        <p class="font-medium">Sara A.</p>
+                        <p class="text-xs tracking-widest text-[#e05a47] uppercase">Business</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="py-24 px-6 lg:px-24 bg-[#fdf7f3]">
+
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 max-w-6xl mx-auto">
+            <div>
+                <span class="text-[#e05a47] text-xs tracking-[3px] uppercase block mb-3">
+                    Blog
+                </span>
+                <h2 class="font-playfair text-4xl md:text-5xl">
+                    Blog & Tips
+                </h2>
+            </div>
+
+            <a href="#" class="mt-6 md:mt-0 text-sm tracking-widest uppercase text-[#e05a47] flex items-center gap-2">
+                View All
+                <span class="text-lg">→</span>
+            </a>
+        </div>
+
+        <!-- Blog Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+            <!-- Card -->
+            <div>
+                <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/post-8-600x391.jpg"
+                    class="w-full h-64 object-cover mb-6" alt="">
+                <h3 class="font-playfair text-xl mb-3 leading-snug">
+                    Modesty Meets Fashion: The Evolution of Hijab Styles
+                </h3>
+                <p class="text-xs text-gray-500 mb-4">
+                    March 2, 2024 • No Comments
+                </p>
+                <a href="#" class="text-xs tracking-widest uppercase text-[#e05a47]">
+                    Read More →
+                </a>
+            </div>
+
+            <div>
+                <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/post-7-600x391.jpg"
+                    class="w-full h-64 object-cover mb-6" alt="">
+                <h3 class="font-playfair text-xl mb-3 leading-snug">
+                    Celebrating Identity: Hijab Styling Workshops at Our Store
+                </h3>
+                <p class="text-xs text-gray-500 mb-4">
+                    March 2, 2024 • No Comments
+                </p>
+                <a href="#" class="text-xs tracking-widest uppercase text-[#e05a47]">
+                    Read More →
+                </a>
+            </div>
+
+            <div>
+                <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/post-6-600x391.jpg"
+                    class="w-full h-64 object-cover mb-6" alt="">
+                <h3 class="font-playfair text-xl mb-3 leading-snug">
+                    The Sustainable Choice: Eco-Friendly Hijabs at Our Store
+                </h3>
+                <p class="text-xs text-gray-500 mb-4">
+                    March 2, 2024 • No Comments
+                </p>
+                <a href="#" class="text-xs tracking-widest uppercase text-[#e05a47]">
+                    Read More →
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Bottom Feature Bar -->
+    <section class="bg-[#fbf1ea] py-14 px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-center">
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Unparalleled Quality</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Made with a Mission</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Community Come First</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-playfair text-lg mb-2">Free Shipping</p>
+                <p class="text-sm text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+        </div>
+    </section>
 
 
 
 
 
+    <!-- Footer Start -->
+    <footer class="bg-black text-gray-200 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Top Section: Newsletter -->
+            <div class="text-center mb-16">
+                <p class="text-[20px] tracking-widest text-[#ffb4a2] uppercase mb-2">Sign Up To Our Email</p>
+                <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-4">
+                    Subscribers List & Receive <br> <span class="text-[#ffb4a2] text-6x1">25% OFF</span>
+                </h2>
+                <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full sm:w-1/2 px-6 py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
+                    <button type="submit"
+                        class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+
+            <!-- Links Section -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 text-center sm:text-left mb-12">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">Jamila</h3>
+                    <ul class="space-y-2 text-gray-400 text-[18px]">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Campaigns</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Press Release</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Career</a></li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">FAQ</h3>
+                    <ul class="space-y-2 text-[18px] text-gray-400">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Popular Questions</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Order</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Split Orders</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Shipping and Delivery</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Payment Methods</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2 text-[18px] text-gray-400">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Veiled Rewards</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Reviews</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Our Brand</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h3 class="font-serif text-[22px] font-semibold mb-4">Community</h3>
+                    <ul class="space-y-2 text-[18px] text-gray-400">
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Jamila Workshop</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Rewards</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Style Guide</a></li>
+                        <li><a href="#" class="hover:text-[#ffb4a2] transition">Ethics & Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h3 class="font-serif text-lg font-semibold mb-4">Follow Us</h3>
+                    <p class="text-gray-400 text-md mb-4">
+                        Montes quisque urna molestie tincidunt aliquet quam. Imper dietat pellentesque vitae aliquet.
+                    </p>
+                    <div class="flex gap-4 justify-center sm:justify-start text-md">
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-facebook-f "></i></a>
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-500 text-md">
+                &copy; 2025 Jamila. Design by ThemeWarrior
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer End -->
 
 
 
-    <h1 class="text-4xl">HOME PAGE</h1>
-    <div id="showProduct" class="px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+
+
 
 
 
     <script type="module" src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
+
 </html>
