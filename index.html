@@ -62,7 +62,7 @@
                 <span class="font-playfair text-3xl font-semibold">Jamila</span>
             </div>
 
-            <!-- RIGHT INFO -->
+            <!-- DESKTOP RIGHT INFO -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-truck"></i>
@@ -74,19 +74,31 @@
                 </div>
                 <div class="flex items-center gap-4 text-base">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <a href="signup.html"> <i class="fa-regular fa-user"></i></a>
+                    <a href="signup.html"><i class="fa-regular fa-user"></i></a>
                     <div class="relative">
                         <i class="fa-solid fa-bag-shopping"></i>
-                        <span
-                            class="absolute -top-2 -right-2 text-xs bg-[#e9a1a3] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
                     </div>
                 </div>
             </div>
 
-            <!-- MOBILE MENU BUTTON -->
-            <button class="lg:hidden text-xl" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <!-- MOBILE RIGHT (ICONS + TOGGLE) -->
+            <div class="flex items-center gap-4 text-lg lg:hidden">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <a href="signup.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <div class="relative">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <!-- TOGGLE -->
+                <button onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
         </div>
 
         <!-- NAVBAR -->
@@ -139,6 +151,8 @@
                 <li><a href="/contact.html" class="block">CONTACT</a></li>
             </ul>
         </div>
+
+
     </header>
 
 
@@ -527,72 +541,126 @@
     </div>
 
     <!-- Cards Container -->
-    <div class="flex flex-wrap justify-center gap-6 px-4 pb-12">
+    <div class="flex flex-wrap justify-center gap-8 px-4 pb-16">
 
         <!-- Card 1 -->
-        <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
+        <div class="relative w-[380px] h-[500px] overflow-hidden group">
+
+            <!-- IMAGE -->
             <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category1.jpg"
-                alt="Weekly Drop"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-                <h3 class="text-white text-xl font-serif mb-2">The Weekly Drop</h3>
-                <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie
-                    tincidunt aliquet quam</p>
-                <button
-                    class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- DARK GRADIENT -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+            <!-- INNER BORDER -->
+            <div class="absolute inset-4 border border-white/70"></div>
+
+            <!-- CONTENT -->
+            <div class="absolute inset-0 mt-55 flex flex-col items-center justify-center text-center px-8 z-10">
+
+                <h3 class="text-white text-3xl font-playfair mb-4">
                     The Weekly Drop
+                </h3>
+
+                <p class="text-white/90 text-sm leading-relaxed mb-6">
+                    Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam
+                </p>
+
+                <button
+                    class="bg-[#e5989b] text-white font-bold text-sm tracking-widest px-8 py-5 rounded-full hover:bg-[#e28a8d] transition">
+                    THE WEEKLY DROP
                 </button>
             </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
+        <div class="relative w-[380px] h-[500px] overflow-hidden group">
+
+            <!-- IMAGE -->
             <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2.jpg"
-                alt="Shop By Color"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-                <h3 class="text-white text-xl font-serif mb-2">Shop By Color</h3>
-                <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie
-                    tincidunt aliquet quam</p>
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- DARK GRADIENT -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+            <!-- INNER BORDER -->
+            <div class="absolute inset-4 border border-white/70"></div>
+
+            <!-- CONTENT -->
+            <div class="absolute inset-0 mt-55 flex flex-col items-center justify-center text-center px-8 z-10">
+
+                <h3 class="text-white text-3xl font-playfair mb-4">
+                    Shop By Color
+                </h3>
+
+                <p class="text-white/90 text-sm leading-relaxed mb-6">
+                    Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam
+                </p>
                 <button
-                    class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
-                    The Weekly Drop
+                    class="bg-[#e5989b] text-white font-bold text-sm tracking-widest px-8 py-5 rounded-full hover:bg-[#e28a8d] transition">
+                    THE WEEKLY DROP
                 </button>
             </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
+        <div class="relative w-[380px] h-[500px] overflow-hidden group">
+
+            <!-- IMAGE -->
             <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2-1.jpg"
-                alt="New to Hijab"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-                <h3 class="text-white text-xl font-serif mb-2">New to Hijab?</h3>
-                <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie
-                    tincidunt aliquet quam</p>
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- DARK GRADIENT -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+            <!-- INNER BORDER -->
+            <div class="absolute inset-4 border border-white/70"></div>
+
+            <!-- CONTENT -->
+            <div class="absolute inset-0 mt-55 flex flex-col items-center justify-center text-center px-8 z-10">
+
+                <h3 class="text-white text-3xl font-playfair mb-4">
+                    New to Hijab?
+                </h3>
+
+                <p class="text-white text-sm leading-relaxed mb-6">
+                    Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam
+                </p>
+
                 <button
-                    class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
-                    The Weekly Drop
+                    class="bg-[#e5989b] text-white font-bold text-sm tracking-widest px-8 py-5 rounded-full hover:bg-[#e28a8d] transition">
+                    THE WEEKLY DROP
                 </button>
             </div>
         </div>
 
+
     </div>
 
 
-    <section class="py-20 px-6 lg:px-20">
+    <section class="py-10 px-6 lg:px-20">
 
         <!-- Top Heading -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-[#e05a47] text-xs tracking-[3px] uppercase block mb-4">
-                TESTIMONIALS
-            </span>
 
-            <h2 class="font-playfair text-4xl md:text-5xl mb-6">
+            <div class="flex flex-col items-center gap-3 mb-6">
+
+                <span class="w-13 h-[.5px] bg-[#E5989B]"></span>
+                <span class="text-xs font-extrabold tracking-[2px] text-[#E5989B]">
+                    TESTIMONIALS
+                </span>
+                <span class="w-13 h-[.5px] bg-[#E5989B]"></span>
+
+            </div>
+
+
+
+            <h2 class="font-playfair text-4xl text-nowrap text-center md:text-6xl mb-6">
                 This is Why We Do What We Do
             </h2>
 
-            <p class="text-gray-500 text-sm md:text-base leading-relaxed">
+            <p class="text-gray-500 text-sm md:text-lg leading-relaxed">
                 Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet
                 quam. Imperdiet at pellent esque vitae aliquet tempor eget rutrum tellus.
             </p>
@@ -603,23 +671,24 @@
 
             <!-- Card 1 -->
             <div class="bg-[#fbf1ea] p-8 relative">
-                <h3 class="font-playfair text-2xl mb-4">
+                <h3 class="font-playfair text-[27px] mb-4">
                     I absolutely love shopping at this hijab store!
                 </h3>
 
-                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                <p class="text-gray-600 text-md leading-relaxed mb-8">
                     The collection is diverse, stylish, and caters to various occasions.
                     The quality of the hijabs is exceptional, and I always receive
                     compliments when wearing them. It’s become my go-to place for all my hijab needs.
                 </p>
 
                 <div class="flex items-center gap-4">
-                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-8-249x300.jpg"
-                        class="w-12 h-12 rounded-full object-cover" alt="">
-                    <div>
-                        <p class="font-medium">Sara A.</p>
-                        <p class="text-xs tracking-widest text-[#e05a47] uppercase">Business</p>
+                    <div class="flex items-center gap-3">
+                        <p class="font-bold text-xl ">Sara A.</p>
+                        <span class="text-[#E8989B] border w-[.25px] h-[30px]"></span>
+                        <p class="text-md font-semibold text-[#E8989B] uppercase">Business</p>
                     </div>
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-8-249x300.jpg"
+                        class="w-15 h-15 rounded-full border border-gray-300 object-cover" alt="">
                 </div>
             </div>
 
@@ -881,11 +950,21 @@
 
 
 
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        }
+        toggleMenu()
+    </script>
 
 
 
     <script type="module" src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
 </body>
 
 </html>
