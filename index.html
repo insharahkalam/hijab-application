@@ -28,7 +28,6 @@
     </style>
 </head>
 
-
 <body class="bg-white">
 
     <!-- TOP BAR -->
@@ -41,11 +40,11 @@
                 <i class="fa-brands fa-instagram"></i>
             </div>
 
-            <p class="hidden md:block text-xs tracking-wide">
+            <p class="hidden md:block text-sm font-poppins font-medium tracking-wide">
                 ENJOY FREE SHIPPING ON US ORDERS OVER $50
             </p>
 
-            <div class="flex items-center gap-2 text-xs">
+            <div class="flex items-center font-poppins font-semibold gap-2 text-sm">
                 <span>UNITED STATES (USD $)</span>
                 <i class="fa-solid fa-chevron-down text-[10px]"></i>
             </div>
@@ -53,31 +52,34 @@
     </div>
 
     <!-- MAIN HEADER -->
-    <header class="bg-[#f6efed] border-b">
+    <header class="bg-[#f6efed]">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
             <!-- LOGO -->
             <div class="flex items-center gap-2">
-                <div class="w-9 h-9 rounded-full bg-[#e9a1a3]"></div>
-                <span class="font-playfair text-3xl font-semibold">Jamila</span>
+                <a href="index.html"> <img
+                        src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/logo-jamila.png"
+                        alt=""></a>
             </div>
 
             <!-- DESKTOP RIGHT INFO -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-truck"></i>
-                    <span>Track order</span>
+                    <i class="fa-regular fa-truck " style="color: #c4c4c4;"></i>
+                    <span class="font-poppins font-bold text-md">Track order</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>(+021) 345 678 910</span>
+                    <i class="fa-solid fa-headset" style="color: #c4c4c4;"></i>
+                    <span class="font-poppins font-bold text-md">(+021) 345 678 910</span>
                 </div>
                 <div class="flex items-center gap-4 text-base">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <a href="signup.html"><i class="fa-regular fa-user"></i></a>
+
                     <div class="relative">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </div>
+
                 </div>
             </div>
 
@@ -102,53 +104,60 @@
         </div>
 
         <!-- NAVBAR -->
-        <nav class="hidden lg:block border-t bg-[#f6efed]">
-            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
+        <nav class="hidden lg:block border-t border-gray-300 bg-[#f6efed]">
+            <ul class="max-w-7xl mx-auto px-6 py-6 flex gap-10 font-poppins text-sm font-medium">
 
-                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
+                <li><a href="index.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">HOME</a></li>
 
-                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
+                <li><a href="about.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">ABOUT</a></li>
 
-                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
-                    <a href="shop.html">SHOP</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                <li><a href="shop.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">SHOP</a></li>
+
+                <li><a href="pricing.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">PRICING</a>
                 </li>
 
-                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
+                <li><a href="pages.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">PAGES</a></li>
 
-                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
-                    <a href="pages.html">PAGES</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                <li><a href="blog.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">BLOG</a></li>
+
+                <li><a href="team.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">OUR TEAM</a>
                 </li>
 
-                <li class="text-[#e9a1a3] flex items-center gap-1">
-                    <a href="blog.html">BLOG</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                <li><a href="testimonials.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">TESTIMONIALS</a>
                 </li>
 
-                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
+                <li><a href="faq.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">FAQ</a></li>
 
-                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
-
-                <li><a href="faq.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
-
-                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
+                <li><a href="contact.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">CONTACT</a>
+                </li>
 
             </ul>
         </nav>
 
         <!-- MOBILE MENU -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-[#f6efed] border-t">
+        <div id="mobileMenu" class="lg:hidden bg-[#f6efed] border-t border-gray-300
+         overflow-hidden max-h-0 opacity-0
+         transition-all duration-500 ease-in">
             <ul class="flex flex-col gap-4 px-6 py-6 font-poppins text-sm">
-                <li><a href="/" class="block">HOME</a></li>
-                <li><a href="/about.html" class="block">ABOUT</a></li>
-                <li><a href="/shop.html" class="block">SHOP</a></li>
-                <li><a href="/pricing.html" class="block">PRICING</a></li>
-                <li><a href="/pages.html" class="block">PAGES</a></li>
-                <li><a href="/blog.html" class="block text-[#e9a1a3]">BLOG</a></li>
-                <li><a href="/team.html" class="block">OUR TEAM</a></li>
-                <li><a href="/faq.html" class="block">FAQ</a></li>
-                <li><a href="/contact.html" class="block">CONTACT</a></li>
+                <li><a href="index.html" class="hover:text-[#e9a1a3] font-medium">HOME</a></li>
+                <li><a href="about.html" class="hover:text-[#e9a1a3] font-medium">ABOUT</a></li>
+                <li><a href="shop.html" class="hover:text-[#e9a1a3] font-medium">SHOP</a></li>
+                <li><a href="pricing.html" class="hover:text-[#e9a1a3] font-medium">PRICING</a></li>
+                <li><a href="pages.html" class="hover:text-[#e9a1a3] font-medium">PAGES</a></li>
+                <li><a href="blog.html" class=" hover:text-[#e9a1a3] font-medium">BLOG</a></li>
+                <li><a href="team.html" class="hover:text-[#e9a1a3] font-medium">OUR TEAM</a></li>
+                <li><a href="faq.html" class="hover:text-[#e9a1a3] font-medium">FAQ</a></li>
+                <li><a href="contact.html" class="hover:text-[#e9a1a3] font-medium">CONTACT</a></li>
             </ul>
         </div>
 
@@ -192,22 +201,30 @@
         </div>
 
     </section>
+
     <!-- New Products Section -->
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
 
             <!-- Small label -->
-            <p class="text-sm tracking-widest text-rose-400 uppercase mb-4">
-                New Product
-            </p>
+
+            <div class="flex flex-col items-center gap-3 mb-6">
+
+                <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+                <span class="text-xs font-poppins uppercase font-semibold tracking-[0.35em] text-[#E5989B]">
+                    New Product
+                </span>
+                <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+            </div>
 
             <!-- Heading -->
-            <h2 class="text-4xl md:text-5xl font-serif text-gray-900">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-payfair text-gray-900">
                 Shop New Hijabs
             </h2>
 
             <!-- Description -->
-            <p class="mt-6 max-w-2xl mx-auto text-gray-500 leading-relaxed">
+            <p class="mt-10 mb-15 max-w-2xl mx-auto text-md font-poppins text-gray-500 leading-relaxed">
                 Lorem ipsum dolor sit amet consec contes quisque urna molestie
                 tincidunt aliquet quam. Imperdiet at pellent esque vitae aliquet
                 tempor eget rutrum tellus.
@@ -290,23 +307,27 @@
 
     </section>
 
-    <section class="relative min-h-screen flex items-center">
-
-        <!-- Background -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+    <section class="relative min-h-screen bg-[#403A33] flex items-center">
 
         <!-- Image -->
         <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/banner-first-collection.jpg"
             class="absolute right-0 top-0 h-full w-1/2 object-cover hidden md:block" alt="Hijab Model" />
 
         <!-- Content -->
-        <div class="relative z-20 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div class="relative boder-r z-20 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
             <!-- Left Content -->
-            <div class="text-white">
-                <p class="text-pink-400 uppercase tracking-widest mb-4 text-sm">
-                    Drive Into Style With
-                </p>
+            <div class="text-white ">
+
+                <div class="flex flex-col items-start gap-3 mb-6">
+
+                    <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+                    <span class="text-sm font-medium font-poppins tracking-widest text-[#E5989B]">
+                        Drive Into Style With
+                    </span>
+                    <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+                </div>
 
                 <h1 class="text-4xl md:text-6xl font-serif leading-tight mb-6">
                     Our First Ever Hijab <br />
@@ -334,17 +355,24 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
 
             <!-- Small label -->
-            <p class="text-sm tracking-widest text-rose-400 uppercase mb-4">
-                best seller
-            </p>
+
+            <div class="flex flex-col items-center gap-3 mb-6">
+
+                <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+                <span class="text-xs font-poppins  font-semibold uppercase tracking-[0.25em] text-[#E5989B]">
+                    best seller
+                </span>
+                <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+            </div>
 
             <!-- Heading -->
-            <h2 class="text-4xl md:text-5xl font-serif text-gray-900">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-payfair text-gray-900">
                 Our Best Sellers
             </h2>
 
             <!-- Description -->
-            <p class="mt-6 max-w-2xl mx-auto text-gray-500 leading-relaxed">
+            <p class="mt-6 mb-10 max-w-2xl mx-auto font-poppins text-gray-500 leading-relaxed">
                 Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet quam. Imperdiet at
                 pellent esque vitae aliquet tempor eget rutrum tellus.
             </p>
@@ -639,7 +667,7 @@
     </div>
 
 
-    <section class="py-10 px-6 lg:px-20">
+    <section class="py-10 px-10">
 
         <!-- Top Heading -->
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -647,7 +675,7 @@
             <div class="flex flex-col items-center gap-3 mb-6">
 
                 <span class="w-13 h-[.5px] bg-[#E5989B]"></span>
-                <span class="text-xs font-extrabold tracking-[2px] text-[#E5989B]">
+                <span class="text-xs font-poppins font-bold tracking-[0.25em] text-[#E5989B]">
                     TESTIMONIALS
                 </span>
                 <span class="w-13 h-[.5px] bg-[#E5989B]"></span>
@@ -656,11 +684,11 @@
 
 
 
-            <h2 class="font-playfair text-4xl text-nowrap text-center md:text-6xl mb-6">
+            <h2 class="font-playfair text-2xl text-nowrap text-center md:text-4xl lg:text-6xl mb-6">
                 This is Why We Do What We Do
             </h2>
 
-            <p class="text-gray-500 text-sm md:text-lg leading-relaxed">
+            <p class="text-gray-500 text-sm font-poppins md:text-lg leading-relaxed">
                 Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet
                 quam. Imperdiet at pellent esque vitae aliquet tempor eget rutrum tellus.
             </p>
@@ -681,99 +709,121 @@
                     compliments when wearing them. It’s become my go-to place for all my hijab needs.
                 </p>
 
-                <div class="flex items-center gap-4">
+                <div class="flex justify-between items-center gap-4">
                     <div class="flex items-center gap-3">
-                        <p class="font-bold text-xl ">Sara A.</p>
+                        <p class="font-bold text-xl ">Sana A.</p>
                         <span class="text-[#E8989B] border w-[.25px] h-[30px]"></span>
                         <p class="text-md font-semibold text-[#E8989B] uppercase">Business</p>
                     </div>
-                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-8-249x300.jpg"
-                        class="w-15 h-15 rounded-full border border-gray-300 object-cover" alt="">
+                    <div class="border-4 border-white -mb-15 flex justify-center items-center w-22 h-22 rounded-full">
+                        <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-8-249x300.jpg"
+                            class="w-20 h-20  rounded-full object-cover" alt="">
+                    </div>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="bg-[#fbf1ea] p-8 relative">
-                <h3 class="font-playfair text-2xl mb-4">
+                <h3 class="font-playfair text-[27px] mb-4">
                     I absolutely love shopping at this hijab store!
                 </h3>
 
-                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                <p class="text-gray-600 text-md leading-relaxed mb-8">
                     The collection is diverse, stylish, and caters to various occasions.
                     The quality of the hijabs is exceptional, and I always receive
                     compliments when wearing them. It’s become my go-to place for all my hijab needs.
                 </p>
 
-                <div class="flex items-center gap-4">
-                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-5-249x300.jpg"
-                        class="w-12 h-12 rounded-full object-cover" alt="">
-                    <div>
-                        <p class="font-medium">Sara A.</p>
-                        <p class="text-xs tracking-widest text-[#e05a47] uppercase">Business</p>
+                <div class="flex justify-between items-center gap-4">
+                    <div class="flex items-center gap-3">
+                        <p class="font-bold text-xl ">Saba B.</p>
+                        <span class="text-[#E8989B] border w-[.25px] h-[30px]"></span>
+                        <p class="text-md font-semibold text-[#E8989B] uppercase">Business</p>
+                    </div>
+                    <div class="border-4 border-white -mb-15 flex justify-center items-center w-22 h-22 rounded-full">
+                        <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-5-249x300.jpg"
+                            class="w-20 h-20  rounded-full object-cover" alt="">
                     </div>
                 </div>
             </div>
+
 
             <!-- Card 3 -->
             <div class="bg-[#fbf1ea] p-8 relative">
-                <h3 class="font-playfair text-2xl mb-4">
+                <h3 class="font-playfair text-[27px] mb-4">
                     I absolutely love shopping at this hijab store!
                 </h3>
 
-                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                <p class="text-gray-600 text-md leading-relaxed mb-8">
                     The collection is diverse, stylish, and caters to various occasions.
                     The quality of the hijabs is exceptional, and I always receive
                     compliments when wearing them. It’s become my go-to place for all my hijab needs.
                 </p>
 
-                <div class="flex items-center gap-4">
-                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-7-249x300.jpg"
-                        class="w-12 h-12 rounded-full object-cover" alt="">
-                    <div>
-                        <p class="font-medium">Sara A.</p>
-                        <p class="text-xs tracking-widest text-[#e05a47] uppercase">Business</p>
+                <div class="flex justify-between items-center gap-4">
+                    <div class="flex items-center gap-3">
+                        <p class="font-bold text-xl ">Sara C.</p>
+                        <span class="text-[#E8989B] border w-[.25px] h-[30px]"></span>
+                        <p class="text-md font-semibold text-[#E8989B] uppercase">Business</p>
+                    </div>
+                    <div class="border-4 border-white -mb-15 flex justify-center items-center w-22 h-22 rounded-full">
+                        <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/product-7-249x300.jpg"
+                            class="w-20 h-20  rounded-full object-cover" alt="">
                     </div>
                 </div>
             </div>
+
 
         </div>
 
     </section>
 
 
-    <section class="py-24 px-6 lg:px-24 bg-[#fdf7f3]">
+    <section class="py-20 px-5 bg-[#F7F6F6]">
 
         <!-- Header -->
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 max-w-6xl mx-auto">
+        <div class=" max-w-6xl mx-auto">
             <div>
-                <span class="text-[#e05a47] text-xs tracking-[3px] uppercase block mb-3">
-                    Blog
-                </span>
-                <h2 class="font-playfair text-4xl md:text-5xl">
-                    Blog & Tips
-                </h2>
+
+                <div class="flex flex-col  gap-3 mb-6">
+
+                    <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+                    <span class="text-sm uppercase font-poppins font-semibold tracking-[0.25em] text-[#E5989B]">
+                        Blog
+                    </span>
+                    <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+                </div>
+
+                <div class="flex justify-between mb-16">
+                    <h2 class=" text-4xl md:text-6xl">
+                        Blog & Tips
+                    </h2>
+                    <a href="blog.html"
+                        class="mt-6 md:mt-0 font-bold text-sm tracking-widest uppercase text-[#e05a47] flex items-center gap-2">
+                        View All
+                        <span class="text-lg mb-1">→</span>
+                    </a>
+                </div>
             </div>
 
-            <a href="#" class="mt-6 md:mt-0 text-sm tracking-widest uppercase text-[#e05a47] flex items-center gap-2">
-                View All
-                <span class="text-lg">→</span>
-            </a>
+
         </div>
 
         <!-- Blog Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
             <!-- Card -->
             <div>
                 <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/post-8-600x391.jpg"
                     class="w-full h-64 object-cover mb-6" alt="">
-                <h3 class="font-playfair text-xl mb-3 leading-snug">
+                <h3 class="font-playfair text-[25px] text-center mb-3 font-medium">
                     Modesty Meets Fashion: The Evolution of Hijab Styles
                 </h3>
-                <p class="text-xs text-gray-500 mb-4">
+                <p class="text-sm text-center text-gray-500 mb-4">
                     March 2, 2024 • No Comments
                 </p>
-                <a href="#" class="text-xs tracking-widest uppercase text-[#e05a47]">
+                <a href="#" class="text-sm font-bold ps-30 text-center tracking-widest uppercase text-[#e05a47]">
                     Read More →
                 </a>
             </div>
@@ -781,13 +831,13 @@
             <div>
                 <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/post-7-600x391.jpg"
                     class="w-full h-64 object-cover mb-6" alt="">
-                <h3 class="font-playfair text-xl mb-3 leading-snug">
+                <h3 class="font-playfair text-[25px] text-center mb-3 font-medium">
                     Celebrating Identity: Hijab Styling Workshops at Our Store
                 </h3>
-                <p class="text-xs text-gray-500 mb-4">
+                <p class="text-sm text-center text-gray-500 mb-4">
                     March 2, 2024 • No Comments
                 </p>
-                <a href="#" class="text-xs tracking-widest uppercase text-[#e05a47]">
+                <a href="#" class="text-sm font-bold ps-30 text-center tracking-widest uppercase text-[#e05a47]">
                     Read More →
                 </a>
             </div>
@@ -795,13 +845,13 @@
             <div>
                 <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/03/post-6-600x391.jpg"
                     class="w-full h-64 object-cover mb-6" alt="">
-                <h3 class="font-playfair text-xl mb-3 leading-snug">
+                <h3 class="font-playfair text-[25px] text-center mb-3 font-medium">
                     The Sustainable Choice: Eco-Friendly Hijabs at Our Store
                 </h3>
-                <p class="text-xs text-gray-500 mb-4">
+                <p class="text-sm text-center text-gray-500 mb-4">
                     March 2, 2024 • No Comments
                 </p>
-                <a href="#" class="text-xs tracking-widest uppercase text-[#e05a47]">
+                <a href="#" class="text-sm font-bold ps-30 text-center tracking-widest uppercase text-[#e05a47]">
                     Read More →
                 </a>
             </div>
@@ -811,33 +861,49 @@
     </section>
 
     <!-- Bottom Feature Bar -->
-    <section class="bg-[#fbf1ea] py-14 px-6">
+    <section class="bg-[#FAF1EC] py-14 px-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-center">
 
-            <div>
-                <p class="font-playfair text-lg mb-2">Unparalleled Quality</p>
-                <p class="text-sm text-gray-600">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ribbon.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Unparalleled Quality</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
                     Our hijabs & accessories are made to last from best-in-class materials.
                 </p>
             </div>
 
-            <div>
-                <p class="font-playfair text-lg mb-2">Made with a Mission</p>
-                <p class="text-sm text-gray-600">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/added-box.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Made with a Mission</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
                     Our hijabs & accessories are made to last from best-in-class materials.
                 </p>
             </div>
 
-            <div>
-                <p class="font-playfair text-lg mb-2">Community Come First</p>
-                <p class="text-sm text-gray-600">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/globe.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Community Come First</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
                     Our hijabs & accessories are made to last from best-in-class materials.
                 </p>
             </div>
 
-            <div>
-                <p class="font-playfair text-lg mb-2">Free Shipping</p>
-                <p class="text-sm text-gray-600">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/added-truck.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Free Shipping</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
                     Our hijabs & accessories are made to last from best-in-class materials.
                 </p>
             </div>
@@ -846,12 +912,15 @@
     </section>
 
 
-
-
-
     <!-- Footer Start -->
-    <footer class="bg-black text-gray-200 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6">
+    <footer class="relative bg-black text-gray-200 pt-20 pb-10 overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-bottom opacity-6"
+            style="background-image: url('https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ornament.png'); background-size: 60px;">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6">
 
             <!-- Top Section: Newsletter -->
             <div class="text-center mb-16">
@@ -861,11 +930,12 @@
                 </h2>
                 <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
                     <input type="email" placeholder="Enter your email"
-                        class="w-full sm:w-1/2 px-6 py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
-                    <button type="submit"
-                        class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
-                        Sign Up
-                    </button>
+                        class="w-full sm:w-1/2 px-6 bg-white py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
+                    <a href="signup.html"> <button type="button"
+                            class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
+                            Sign Up
+                        </button>
+                    </a>
                 </form>
             </div>
 
@@ -948,21 +1018,23 @@
 
 
 
-
-
     <script>
+
         function toggleMenu() {
             const menu = document.getElementById("mobileMenu");
-            menu.classList.toggle("hidden");
+            if (menu.classList.contains("max-h-0")) {
+                menu.classList.remove("max-h-0", "opacity-0");
+                menu.classList.add("max-h-[500px]", "opacity-100");
+            } else {
+                menu.classList.add("max-h-0", "opacity-0");
+                menu.classList.remove("max-h-[500px]", "opacity-100");
+            }
         }
         toggleMenu()
     </script>
 
-
-
     <script type="module" src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 
 
 </body>
