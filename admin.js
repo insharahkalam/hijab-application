@@ -1,7 +1,5 @@
 import client from "./app.js";
 
-
-
 const { data: { user }, error } = await client.auth.getUser();
 
 if (!user) {
