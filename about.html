@@ -1,302 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
     body {
       font-family: 'Playfair Display', serif;
     }
-      .font-playfair { font-family: 'Playfair Display', serif; }
-    .font-poppins { font-family: 'Poppins', sans-serif; }
 
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
-<body>
 
-    <!-- TOP BAR -->
-    <div class="bg-[#e9a1a3] text-white text-sm">
-        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+<body class="bg-white">
 
-            <div class="flex gap-4">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
+  <!-- TOP BAR -->
+  <div class="bg-[#e9a1a3] text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
 
-            <p class="hidden md:block text-xs tracking-wide">
-                ENJOY FREE SHIPPING ON US ORDERS OVER $50
-            </p>
+      <div class="flex gap-4">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
 
-            <div class="flex items-center gap-2 text-xs">
-                <span>UNITED STATES (USD $)</span>
-                <i class="fa-solid fa-chevron-down text-[10px]"></i>
-            </div>
+      <p class="hidden md:block text-sm font-poppins font-medium tracking-wide">
+        ENJOY FREE SHIPPING ON US ORDERS OVER $50
+      </p>
+
+      <div class="flex items-center font-poppins font-semibold gap-2 text-sm">
+        <span>UNITED STATES (USD $)</span>
+        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="bg-[#f6efed]">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- LOGO -->
+      <div class="flex items-center gap-2">
+        <a href="index.html"> <img
+            src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/logo-jamila.png"
+            alt=""></a>
+      </div>
+
+      <!-- DESKTOP RIGHT INFO -->
+      <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
+        <div class="flex items-center gap-2">
+          <i class="fa-regular fa-truck " style="color: #c4c4c4;"></i>
+          <span class="font-poppins font-bold text-md">Track order</span>
         </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-headset" style="color: #c4c4c4;"></i>
+          <span class="font-poppins font-bold text-md">(+021) 345 678 910</span>
+        </div>
+        <div class="flex items-center gap-4 text-base">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <a href="signup.html"><i class="fa-regular fa-user"></i></a>
+
+
+          <div id="cartIcon" class="relative cursor-pointer">
+            <i class=" fa-solid fa-bag-shopping"></i>
+          </div>
+
+           <div id="logout" class="relative cursor-pointer">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+
+
+        </div>
+      </div>
+
+      <!-- MOBILE RIGHT (ICONS + TOGGLE) -->
+      <div class="flex items-center gap-4 text-lg lg:hidden">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <a href="signup.html">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <div class="relative">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <!-- TOGGLE -->
+        <button onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
     </div>
 
-    <!-- MAIN HEADER -->
-    <header class="bg-[#f6efed] border-b">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- NAVBAR -->
+    <nav class="hidden lg:block border-t border-gray-300 bg-[#f6efed]">
+      <ul class="max-w-7xl mx-auto px-6 py-6 flex gap-10 font-poppins text-sm font-medium">
 
-            <!-- LOGO -->
-            <div class="flex items-center gap-2">
-                <div class="w-9 h-9 rounded-full bg-[#e9a1a3]"></div>
-                <span class="font-playfair text-3xl font-semibold">Jamila</span>
-            </div>
+        <li><a href="index.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">HOME</a></li>
 
-            <!-- RIGHT INFO -->
-            <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-truck"></i>
-                    <span>Track order</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>(+021) 345 678 910</span>
-                </div>
-                <div class="flex items-center gap-4 text-base">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-regular fa-user"></i>
-                    <div class="relative">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span
-                            class="absolute -top-2 -right-2 text-xs bg-[#e9a1a3] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
-                    </div>
-                </div>
-            </div>
+        <li><a href="about.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">ABOUT</a></li>
 
-            <!-- MOBILE MENU BUTTON -->
-            <button class="lg:hidden text-xl" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+        <li><a href="shop.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">SHOP</a></li>
+
+        <li><a href="pricing.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">PRICING</a>
+        </li>
+
+        <li><a href="blog.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">BLOG</a></li>
+
+        <li><a href="team.html" class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">OUR
+            TEAM</a>
+        </li>
+
+        <li><a href="testimonials.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">TESTIMONIALS</a>
+        </li>
+
+        <li><a href="faq.html" class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">FAQ</a>
+        </li>
+
+        <li><a href="contact.html"
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">CONTACT</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="lg:hidden bg-[#f6efed] border-t border-gray-300
+         overflow-hidden max-h-0 opacity-0
+         transition-all duration-500 ease-in">
+      <ul class="flex flex-col gap-4 px-6 py-6 font-poppins text-sm">
+        <li><a href="index.html" class="hover:text-[#e9a1a3] font-medium">HOME</a></li>
+        <li><a href="about.html" class="hover:text-[#e9a1a3] font-medium">ABOUT</a></li>
+        <li><a href="shop.html" class="hover:text-[#e9a1a3] font-medium">SHOP</a></li>
+        <li><a href="pricing.html" class="hover:text-[#e9a1a3] font-medium">PRICING</a></li>
+        <li><a href="blog.html" class=" hover:text-[#e9a1a3] font-medium">BLOG</a></li>
+        <li><a href="team.html" class="hover:text-[#e9a1a3] font-medium">OUR TEAM</a></li>
+        <li><a href="faq.html" class="hover:text-[#e9a1a3] font-medium">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-[#e9a1a3] font-medium">CONTACT</a></li>
+      </ul>
+    </div>
+
+
+  </header>
+
+
+  <!-- Header -->
+  <section class="relative flex flex-col items-center justify-center
+         min-h-[55vh]
+         bg-[#F7E0E1]
+         text-center
+         px-6 overflow-hidden">
+
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-bottom opacity-20"
+      style="background-image: url('https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ornament.png'); background-size: 40px;">
+    </div>
+
+    <!-- subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-20
+           bg-[radial-gradient(circle_at_1px_1px,#e7bcbc_1px,transparent_1px)]
+           bg-[size:22px_22px]">
+    </div>
+
+    <!-- content -->
+    <div class="relative z-10">
+      <div class="flex flex-col items-center gap-3 mb-6">
+
+        <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+        <span class="text-xs uppercase font-poppins font-bold tracking-[0.25em] text-[#E5989B]">
+          About
+        </span>
+        <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+      </div>
+
+      <h1 class="text-5xl md:text-6xl lg:text-7xl
+             font-playfair font-normal
+             mb-6 text-black">
+        About
+      </h1>
+
+      <p class="text-[#E5989B] font-poppins font-bold tracking-wider">
+        Home <span class="mx-3"><i class="fa-solid fa-chevron-right fa-xs"></i></span> About
+      </p>
+    </div>
+  </section>
+
+
+  <section class="w-full min-h-screen grid grid-cols-1 md:grid-cols-2">
+
+    <!-- Left Image -->
+    <div class="h-[500px] md:h-auto">
+      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/about.jpg"
+        alt="Hijab Model" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex items-center bg-black px-8 md:px-16 py-16">
+      <div class="max-w-lg text-white">
+
+        <div class="flex flex-col items-start font-poppins gap-3 mb-6">
+
+          <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+          <span class="text-sm font-medium tracking-[0.25em] text-[#E5989B]">
+            About
+          </span>
+          <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
         </div>
 
-        <!-- NAVBAR -->
-        <nav class="hidden lg:block border-t bg-[#f6efed]">
-            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
+        <h2 class="text-4xl md:text-5xl font-serif leading-tight mb-6">
+          Empower & <br /> Inspire
+        </h2>
 
-                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
+        <p class="text-gray-400 mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur. Montes quisque urna molestie
+          tincidunt aliquet quam. Imperdiet at pellentesque vitae aliquet tempor
+          eget rutrum tellus. Leo a luctus vitae.
+        </p>
 
-                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
+        <p class="font-semibold mb-8">
+          From the bottom of our hearts, thank you!
+        </p>
 
-                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
-                    <a href="shop.html">SHOP</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                </li>
+        <button class="bg-pink-300 text-white px-10 py-4 rounded-full font-semibold
+               hover:bg-pink-400 transition">
+          LEARN MORE
+        </button>
 
-                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
+      </div>
+    </div>
 
-                <li class="text-[#e9a1a3] flex items-center gap-1">
-                    <a href="blog.html">BLOG</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                </li>
-
-                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
-
-                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
-
-                <li><a href="FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
-
-                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
-
-            </ul>
-        </nav>
-
-        <!-- MOBILE MENU -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-[#f6efed] border-t">
-            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
-
-                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
-
-                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
-
-                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
-                    <a href="shop.html">SHOP</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                </li>
-
-                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
-
-                <li class="text-[#e9a1a3] flex items-center gap-1">
-                    <a href="blog.html">BLOG</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                </li>
-
-                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
-
-                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
-
-                <li><a href="FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
-
-                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
-
-            </ul>
-        </div>
-    </header>
+  </section>
 
 
- <!-- Heading -->
-  <div class="text-center py-12 px-4">
-    <p class="text-pink-300 uppercase tracking-widest mb-2 text-sm">Categories</p>
-    <h2 class="text-4xl font-serif mb-4">Shop by Categories</h2>
-    <p class="text-gray-600 max-w-xl mx-auto">
-      Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet quam. 
-      Imperdiet at pellent esque vitae aliquet tempor eget rutrum tellus.
+  <!-- Heading -->
+  <div class="text-center pt-16 ">
+
+    <!-- Small label -->
+
+    <div class="flex flex-col items-center gap-3 mb-6">
+
+      <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+      <span class="text-xs font-poppins  font-semibold uppercase tracking-[0.25em] text-[#E5989B]">
+        Categories
+      </span>
+      <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+    </div>
+
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-payfair text-gray-900">
+      Shop by Categories
+    </h2>
+
+    <!-- Description -->
+    <p class="mt-6 mb-10 max-w-2xl mx-auto font-poppins text-gray-500 leading-relaxed">
+      Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet quam. Imperdiet at
+      pellent esque vitae aliquet tempor eget rutrum tellus.
     </p>
   </div>
 
   <!-- Cards Container -->
-  <div class="flex flex-wrap justify-center gap-6 px-4 pb-12">
+  <div class="flex flex-wrap justify-center gap-8 px-4 pb-16">
 
     <!-- Card 1 -->
-    <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
-      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category1.jpg" alt="Weekly Drop" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-        <h3 class="text-white text-xl font-serif mb-2">The Weekly Drop</h3>
-        <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam</p>
-        <button class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
+    <div class="relative w-[380px] h-[500px] overflow-hidden group">
+
+      <!-- IMAGE -->
+      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category1.jpg"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+      <!-- DARK GRADIENT -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+      <!-- INNER BORDER -->
+      <div class="absolute inset-4 border border-white/70"></div>
+
+      <!-- CONTENT -->
+      <div class="absolute inset-0 mt-55 flex flex-col items-center justify-center text-center px-8 z-10">
+
+        <h3 class="text-white text-3xl font-playfair mb-4">
           The Weekly Drop
+        </h3>
+
+        <p class="text-white/90 text-sm leading-relaxed mb-6">
+          Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam
+        </p>
+
+        <button
+          class="bg-[#e5989b] text-white font-bold text-sm tracking-widest px-8 py-5 rounded-full hover:bg-[#e28a8d] transition">
+          THE WEEKLY DROP
         </button>
       </div>
     </div>
 
     <!-- Card 2 -->
-    <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
-      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2.jpg" alt="Shop By Color" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-        <h3 class="text-white text-xl font-serif mb-2">Shop By Color</h3>
-        <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam</p>
-        <button class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
-          The Weekly Drop
+    <div class="relative w-[380px] h-[500px] overflow-hidden group">
+
+      <!-- IMAGE -->
+      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2.jpg"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+      <!-- DARK GRADIENT -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+      <!-- INNER BORDER -->
+      <div class="absolute inset-4 border border-white/70"></div>
+
+      <!-- CONTENT -->
+      <div class="absolute inset-0 mt-55 flex flex-col items-center justify-center text-center px-8 z-10">
+
+        <h3 class="text-white text-3xl font-playfair mb-4">
+          Shop By Color
+        </h3>
+
+        <p class="text-white/90 text-sm leading-relaxed mb-6">
+          Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam
+        </p>
+        <button
+          class="bg-[#e5989b] text-white font-bold text-sm tracking-widest px-8 py-5 rounded-full hover:bg-[#e28a8d] transition">
+          THE WEEKLY DROP
         </button>
       </div>
     </div>
 
     <!-- Card 3 -->
-    <div class="relative w-72 h-96 rounded-lg overflow-hidden group">
-      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2-1.jpg" alt="New to Hijab" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-        <h3 class="text-white text-xl font-serif mb-2">New to Hijab?</h3>
-        <p class="text-gray-200 text-sm mb-4">Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam</p>
-        <button class="bg-[#e5989b] text-white font-semibold py-2 px-4 rounded-full hover:bg-pink-400 transition-colors">
-          The Weekly Drop
+    <div class="relative w-[380px] h-[500px] overflow-hidden group">
+
+      <!-- IMAGE -->
+      <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/card-category2-1.jpg"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+      <!-- DARK GRADIENT -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+      <!-- INNER BORDER -->
+      <div class="absolute inset-4 border border-white/70"></div>
+
+      <!-- CONTENT -->
+      <div class="absolute inset-0 mt-55 flex flex-col items-center justify-center text-center px-8 z-10">
+
+        <h3 class="text-white text-3xl font-playfair mb-4">
+          New to Hijab?
+        </h3>
+
+        <p class="text-white/90 text-sm leading-relaxed mb-6">
+          Lorem ipsum dolor sit amet consec Montes quisque urna molestie tincidunt aliquet quam
+        </p>
+        <button
+          class="bg-[#e5989b] text-white font-bold text-sm tracking-widest px-8 py-5 rounded-full hover:bg-[#e28a8d] transition">
+          THE WEEKLY DROP
         </button>
       </div>
     </div>
+
 
   </div>
 
 
+  <!-- Bottom Feature Bar -->
+  <section class="bg-[#FAF1EC] py-14 px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-center">
+
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center justify-start gap-3">
+          <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ribbon.png" alt="">
+          <span class="font-playfair text-xl mb-2">Unparalleled Quality</span>
+        </div>
+        <p class="text-sm text-start text-gray-600">
+          Our hijabs & accessories are made to last from best-in-class materials.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center justify-start gap-3">
+          <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/added-box.png"
+            alt="">
+          <span class="font-playfair text-xl mb-2">Made with a Mission</span>
+        </div>
+        <p class="text-sm text-start text-gray-600">
+          Our hijabs & accessories are made to last from best-in-class materials.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center justify-start gap-3">
+          <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/globe.png" alt="">
+          <span class="font-playfair text-xl mb-2">Community Come First</span>
+        </div>
+        <p class="text-sm text-start text-gray-600">
+          Our hijabs & accessories are made to last from best-in-class materials.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center justify-start gap-3">
+          <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/added-truck.png"
+            alt="">
+          <span class="font-playfair text-xl mb-2">Free Shipping</span>
+        </div>
+        <p class="text-sm text-start text-gray-600">
+          Our hijabs & accessories are made to last from best-in-class materials.
+        </p>
+      </div>
+
+    </div>
+  </section>
 
 
+  <!-- Footer Start -->
+  <footer class="relative bg-black text-gray-200 pt-20 pb-10 overflow-hidden">
 
-    
-
-
-
-
-    
-<!-- Footer Start -->
-<footer class="bg-black text-gray-200 pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- Top Section: Newsletter -->
-    <div class="text-center mb-16">
-      <p class="text-[20px] tracking-widest text-[#ffb4a2] uppercase mb-2">Sign Up To Our Email</p>
-      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-4">
-        Subscribers List & Receive <br> <span class="text-[#ffb4a2] text-6x1">25% OFF</span> 
-      </h2>
-      <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
-        <input type="email" placeholder="Enter your email" 
-               class="w-full sm:w-1/2 px-6 py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
-        <button type="submit" 
-                class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
-          Sign Up
-        </button>
-      </form>
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-bottom opacity-6"
+      style="background-image: url('https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ornament.png'); background-size: 60px;">
     </div>
 
-    <!-- Links Section -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 text-center sm:text-left mb-12">
-      <!-- Brand -->
-      <div>
-        <h3 class="font-serif text-[22px] font-semibold mb-4">Jamila</h3>
-        <ul class="space-y-2 text-gray-400 text-[18px]">
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Campaigns</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">About Us</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Contact</a></li>
-           <li><a href="#" class="hover:text-[#ffb4a2] transition">Press Release</a></li>
+    <div class="relative max-w-7xl mx-auto px-6">
+
+      <!-- Top Section: Newsletter -->
+      <div class="text-center mb-16">
+        <p class="text-[20px] tracking-widest text-[#ffb4a2] uppercase mb-2">Sign Up To Our Email</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-4">
+          Subscribers List & Receive <br> <span class="text-[#ffb4a2] text-6x1">25% OFF</span>
+        </h2>
+        <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+          <input type="email" placeholder="Enter your email"
+            class="w-full sm:w-1/2 px-6 bg-white py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
+          <a href="signup.html"> <button type="button"
+              class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
+              Sign Up
+            </button>
+          </a>
+        </form>
+      </div>
+
+      <!-- Links Section -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 text-center sm:text-left mb-12">
+        <!-- Brand -->
+        <div>
+          <h3 class="font-serif text-[22px] font-semibold mb-4">Jamila</h3>
+          <ul class="space-y-2 text-gray-400 text-[18px]">
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Campaigns</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">About Us</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Contact</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Press Release</a></li>
             <li><a href="#" class="hover:text-[#ffb4a2] transition">Career</a></li>
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <!-- FAQ -->
-      <div>
-        <h3 class="font-serif text-[22px] font-semibold mb-4">FAQ</h3>
-        <ul class="space-y-2 text-[18px] text-gray-400">
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Popular Questions</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Order</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Split Orders</a></li>
-           <li><a href="#" class="hover:text-[#ffb4a2] transition">Shipping and Delivery</a></li>
+        <!-- FAQ -->
+        <div>
+          <h3 class="font-serif text-[22px] font-semibold mb-4">FAQ</h3>
+          <ul class="space-y-2 text-[18px] text-gray-400">
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Popular Questions</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Order</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Split Orders</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Shipping and Delivery</a></li>
             <li><a href="#" class="hover:text-[#ffb4a2] transition">Payment Methods</a></li>
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <!-- Information -->
-      <div>
-        <h3 class="font-serif text-[22px] font-semibold mb-4">Information</h3>
-        <ul class="space-y-2 text-[18px] text-gray-400">
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Veiled Rewards</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Reviews</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Our Brand</a></li>
+        <!-- Information -->
+        <div>
+          <h3 class="font-serif text-[22px] font-semibold mb-4">Information</h3>
+          <ul class="space-y-2 text-[18px] text-gray-400">
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Veiled Rewards</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Reviews</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Our Brand</a></li>
             <li><a href="#" class="hover:text-[#ffb4a2] transition">Blog</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Privacy Policy</a></li>
-        </ul>
-      </div>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Privacy Policy</a></li>
+          </ul>
+        </div>
 
-      <!-- Community -->
-      <div>
-        <h3 class="font-serif text-[22px] font-semibold mb-4">Community</h3>
-        <ul class="space-y-2 text-[18px] text-gray-400">
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Jamila Workshop</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Rewards</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Style Guide</a></li>
-          <li><a href="#" class="hover:text-[#ffb4a2] transition">Ethics & Sustainability</a></li>
-        </ul>
-      </div>
+        <!-- Community -->
+        <div>
+          <h3 class="font-serif text-[22px] font-semibold mb-4">Community</h3>
+          <ul class="space-y-2 text-[18px] text-gray-400">
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Jamila Workshop</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Rewards</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Style Guide</a></li>
+            <li><a href="#" class="hover:text-[#ffb4a2] transition">Ethics & Sustainability</a></li>
+          </ul>
+        </div>
 
-      <!-- Social -->
-      <div>
-        <h3 class="font-serif text-lg font-semibold mb-4">Follow Us</h3>
-        <p class="text-gray-400 text-md mb-4">
-         Montes quisque urna molestie tincidunt aliquet quam. Imper dietat pellentesque vitae aliquet.
-        </p>
-        <div class="flex gap-4 justify-center sm:justify-start text-md">
-          <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-facebook-f "></i></a>
-          <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-youtube"></i></a>
+        <!-- Social -->
+        <div>
+          <h3 class="font-serif text-lg font-semibold mb-4">Follow Us</h3>
+          <p class="text-gray-400 text-md mb-4">
+            Montes quisque urna molestie tincidunt aliquet quam. Imper dietat pellentesque vitae aliquet.
+          </p>
+          <div class="flex gap-4 justify-center sm:justify-start text-md">
+            <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-facebook-f "></i></a>
+            <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-[#ffb4a2] hover:text-pink-500 transition"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Bottom -->
-    <div class="border-t border-gray-700 pt-6 text-center text-gray-500 text-md">
-      &copy; 2025 Jamila. Design by ThemeWarrior
-    </div>
+      <!-- Bottom -->
+      <div class="border-t border-gray-700 pt-6 text-center text-gray-500 text-md">
+        &copy; 2025 Jamila. Design by ThemeWarrior
+      </div>
 
+    </div>
+  </footer>
+
+
+  <!-- CART DRAWER -->
+  <div id="cartDrawer"
+    class="cart-drawer fixed top-0 right-0 z-50 h-full w-full md:w-[500px] bg-white shadow-xl translate-x-full transition-transform duration-300">
+    <div class="flex justify-between items-center p-4 border-b">
+      <h2 class="text-lg font-bold">My Cart</h2>
+      <button id="closeDrawer" class="close-cart text-xl">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items p-4 max-h-[90vh] overflow-y-auto"></div>
   </div>
-</footer>
-<!-- Footer End -->
+
+
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (menu.classList.contains("max-h-0")) {
+        menu.classList.remove("max-h-0", "opacity-0");
+        menu.classList.add("max-h-[500px]", "opacity-100");
+      } else {
+        menu.classList.add("max-h-0", "opacity-0");
+        menu.classList.remove("max-h-[500px]", "opacity-100");
+      }
+    }
+    toggleMenu()
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+  <script type="module" src="productDetail.js"></script>
 
 </body>
+
 </html>

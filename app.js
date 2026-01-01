@@ -127,6 +127,22 @@ loginBtn && loginBtn.addEventListener("click", async (e) => {
     }
 });
 
+// =========LOGOUT=======
+
+const logout = document.getElementById("logout")
+
+logout && logout.addEventListener("click", async () => {
+    const { error } = await client.auth.signOut()
+    if (error) {
+        console.log(error, "logout error");
+    } else {
+        alert("logout successfully!")
+        window.location.href = "login.html"
+    }
+})
+
+
+
 
 
 // ===========Fetch product ==========
@@ -169,7 +185,7 @@ async function showAllProduct() {
 
     <div class="p-4 text-center space-y-2">
 
-        <p class="text-sm text-gray-500">
+        <p class="text-sm line-clamp-2 text-gray-500">
             
               ${product.description}
         </p>
@@ -196,4 +212,3 @@ window.productCard = function (id) {
     window.location.href = `productDetail.html?id=${id}`
 
 }
-

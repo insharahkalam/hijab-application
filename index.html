@@ -73,11 +73,15 @@
                     <span class="font-poppins font-bold text-md">(+021) 345 678 910</span>
                 </div>
                 <div class="flex items-center gap-4 text-base">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+
                     <a href="signup.html"><i class="fa-regular fa-user"></i></a>
 
-                    <div class="relative">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                    <div id="cartIcon" class="relative cursor-pointer">
+                        <i class=" fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                    <div id="logout" class="relative cursor-pointer">
+                        <i class="fa-solid fa-right-from-bracket"></i>
                     </div>
 
                 </div>
@@ -92,7 +96,7 @@
                 </a>
 
                 <div class="relative">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i class=" fa-solid fa-bag-shopping"></i>
                 </div>
 
                 <!-- TOGGLE -->
@@ -119,9 +123,6 @@
                 <li><a href="pricing.html"
                         class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">PRICING</a>
                 </li>
-
-                <li><a href="pages.html"
-                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">PAGES</a></li>
 
                 <li><a href="blog.html"
                         class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">BLOG</a></li>
@@ -153,7 +154,6 @@
                 <li><a href="about.html" class="hover:text-[#e9a1a3] font-medium">ABOUT</a></li>
                 <li><a href="shop.html" class="hover:text-[#e9a1a3] font-medium">SHOP</a></li>
                 <li><a href="pricing.html" class="hover:text-[#e9a1a3] font-medium">PRICING</a></li>
-                <li><a href="pages.html" class="hover:text-[#e9a1a3] font-medium">PAGES</a></li>
                 <li><a href="blog.html" class=" hover:text-[#e9a1a3] font-medium">BLOG</a></li>
                 <li><a href="team.html" class="hover:text-[#e9a1a3] font-medium">OUR TEAM</a></li>
                 <li><a href="faq.html" class="hover:text-[#e9a1a3] font-medium">FAQ</a></li>
@@ -523,6 +523,9 @@
 
     </section>
 
+
+
+
     <section class="w-full min-h-screen grid grid-cols-1 md:grid-cols-2">
 
         <!-- Left Image -->
@@ -564,8 +567,30 @@
     </section>
 
     <!-- Heading -->
-    <div class="text-center py-12 px-4">
+    <div class="text-center pt-16 ">
 
+        <!-- Small label -->
+
+        <div class="flex flex-col items-center gap-3 mb-6">
+
+            <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+            <span class="text-xs font-poppins  font-semibold uppercase tracking-[0.25em] text-[#E5989B]">
+                Categories
+            </span>
+            <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+        </div>
+
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-payfair text-gray-900">
+            Shop by Categories
+        </h2>
+
+        <!-- Description -->
+        <p class="mt-6 mb-10 max-w-2xl mx-auto font-poppins text-gray-500 leading-relaxed">
+            Lorem ipsum dolor sit amet consec contes quisque urna molestie tincidunt aliquet quam. Imperdiet at
+            pellent esque vitae aliquet tempor eget rutrum tellus.
+        </p>
     </div>
 
     <!-- Cards Container -->
@@ -1017,6 +1042,16 @@
     <!-- Footer End -->
 
 
+    <!-- CART DRAWER -->
+    <div id="cartDrawer"
+        class="cart-drawer fixed top-0 right-0 z-50 h-full w-full md:w-[500px] bg-white shadow-xl translate-x-full transition-transform duration-300">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-lg font-bold">My Cart</h2>
+            <button id="closeDrawer" class="close-cart text-xl">✕</button>
+        </div>
+        <div id="cartItems" class="cart-items p-4 max-h-[90vh] overflow-y-auto"></div>
+    </div>
+
 
     <script>
 
@@ -1033,9 +1068,10 @@
         toggleMenu()
     </script>
 
+    <script type="module" src="productDetail.js"></script>
     <script type="module" src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

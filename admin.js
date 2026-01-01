@@ -64,7 +64,8 @@ colorBtn.addEventListener("click", (e) => {
 const addProductBtn = document.getElementById("addProductBtn")
 const productName = document.getElementById("productName")
 const brand = document.getElementById("brand")
-const price = document.getElementById("price")
+const randomprice = document.getElementById("randomprice")
+const finalprice = document.getElementById("finalprice")
 const category = document.getElementById("category")
 const productImg = document.getElementById("productImg")
 const description = document.getElementById("description")
@@ -75,7 +76,8 @@ addProductBtn && addProductBtn.addEventListener("click", async () => {
     if (
         productName.value.trim() === "" ||
         brand.value.trim() === "" ||
-        price.value.trim() === "" ||
+        randomprice.value.trim() === "" ||
+        finalprice.value.trim() === "" ||
         category.value.trim() === "" ||
         !productImg.files.length ||
         description.value.trim() === "" ||
@@ -110,7 +112,7 @@ addProductBtn && addProductBtn.addEventListener("click", async () => {
 
         const { error } = await client
             .from('product_detail')
-            .insert({ name: productName.value, brand: brand.value, price: price.value, category: category.value, color: allColor, description: description.value, image: productUrl })
+            .insert({ name: productName.value, brand: brand.value, rendomprice:randomprice.value, price: finalprice.value, category: category.value, color: allColor, description: description.value, image: productUrl })
 
         if (error) {
             console.log(error, "inserted error");

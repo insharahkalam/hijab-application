@@ -28,7 +28,6 @@
     </style>
 </head>
 
-
 <body class="bg-white">
 
     <!-- TOP BAR -->
@@ -41,11 +40,11 @@
                 <i class="fa-brands fa-instagram"></i>
             </div>
 
-            <p class="hidden md:block text-xs tracking-wide">
+            <p class="hidden md:block text-sm font-poppins font-medium tracking-wide">
                 ENJOY FREE SHIPPING ON US ORDERS OVER $50
             </p>
 
-            <div class="flex items-center gap-2 text-xs">
+            <div class="flex items-center font-poppins font-semibold gap-2 text-sm">
                 <span>UNITED STATES (USD $)</span>
                 <i class="fa-solid fa-chevron-down text-[10px]"></i>
             </div>
@@ -53,113 +52,248 @@
     </div>
 
     <!-- MAIN HEADER -->
-    <header class="bg-[#f6efed] border-b">
+    <header class="bg-[#f6efed]">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
             <!-- LOGO -->
             <div class="flex items-center gap-2">
-                <div class="w-9 h-9 rounded-full bg-[#e9a1a3]"></div>
-                <span class="font-playfair text-3xl font-semibold">Jamila</span>
+                <a href="index.html"> <img
+                        src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/logo-jamila.png"
+                        alt=""></a>
             </div>
 
-            <!-- RIGHT INFO -->
+            <!-- DESKTOP RIGHT INFO -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-poppins">
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-truck"></i>
-                    <span>Track order</span>
+                    <i class="fa-regular fa-truck " style="color: #c4c4c4;"></i>
+                    <span class="font-poppins font-bold text-md">Track order</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>(+021) 345 678 910</span>
+                    <i class="fa-solid fa-headset" style="color: #c4c4c4;"></i>
+                    <span class="font-poppins font-bold text-md">(+021) 345 678 910</span>
                 </div>
                 <div class="flex items-center gap-4 text-base">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-regular fa-user"></i>
-                    <div class="relative">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span
-                            class="absolute -top-2 -right-2 text-xs bg-[#e9a1a3] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                    <a href="signup.html"><i class="fa-regular fa-user"></i></a>
+
+                    <div id="cartIcon" class="relative cursor-pointer">
+                        <i class=" fa-solid fa-bag-shopping"></i>
                     </div>
+
+                     <div id="logout" class="relative cursor-pointer">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+
+
                 </div>
             </div>
 
-            <!-- MOBILE MENU BUTTON -->
-            <button class="lg:hidden text-xl" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <!-- MOBILE RIGHT (ICONS + TOGGLE) -->
+            <div class="flex items-center gap-4 text-lg lg:hidden">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <a href="signup.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <button class="relative cursor-pointer">
+                    <i class=" fa-solid fa-bag-shopping"></i>
+                </button>
+
+                <!-- TOGGLE -->
+                <button onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
         </div>
 
         <!-- NAVBAR -->
-        <nav class="hidden lg:block border-t bg-[#f6efed]">
-            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
+        <nav class="hidden lg:block border-t border-gray-300 bg-[#f6efed]">
+            <ul class="max-w-7xl mx-auto px-6 py-6 flex gap-10 font-poppins text-sm font-medium">
 
-                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
+                <li><a href="index.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">HOME</a></li>
 
-                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
+                <li><a href="about.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">ABOUT</a></li>
 
-                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
-                    <a href="shop.html">SHOP</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                <li><a href="shop.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">SHOP</a></li>
+
+                <li><a href="pricing.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">PRICING</a>
                 </li>
 
-                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
+                <li><a href="blog.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">BLOG</a></li>
 
-                <li class="text-[#e9a1a3] flex items-center gap-1">
-                    <a href="blog.html">BLOG</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                <li><a href="team.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">OUR TEAM</a>
                 </li>
 
-                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
+                <li><a href="testimonials.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">TESTIMONIALS</a>
+                </li>
 
-                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
+                <li><a href="faq.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">FAQ</a></li>
 
-                <li><a href="FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
-
-                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
+                <li><a href="contact.html"
+                        class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 ">CONTACT</a>
+                </li>
 
             </ul>
         </nav>
 
         <!-- MOBILE MENU -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-[#f6efed] border-t">
-            <ul class="max-w-7xl mx-auto px-6 py-4 flex gap-8 font-poppins text-sm font-medium">
-
-                <li><a href="index.html" class="hover:text-[#e9a1a3]">HOME</a></li>
-
-                <li><a href="about.html" class="hover:text-[#e9a1a3]">ABOUT</a></li>
-
-                <li class="flex items-center gap-1 cursor-pointer hover:text-[#e9a1a3]">
-                    <a href="shop.html">SHOP</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                </li>
-
-                <li><a href="pricing.html" class="hover:text-[#e9a1a3]">PRICING</a></li>
-
-                <li class="text-[#e9a1a3] flex items-center gap-1">
-                    <a href="blog.html">BLOG</a>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
-                </li>
-
-                <li><a href="team.html" class="hover:text-[#e9a1a3]">OUR TEAM</a></li>
-
-                <li><a href="testimonials.html" class="hover:text-[#e9a1a3]">TESTIMONIALS</a></li>
-
-                <li><a href="FAQ.html" class="hover:text-[#e9a1a3]">FAQ</a></li>
-
-                <li><a href="contact.html" class="hover:text-[#e9a1a3]">CONTACT</a></li>
-
+        <div id="mobileMenu" class="lg:hidden bg-[#f6efed] border-t border-gray-300
+         overflow-hidden max-h-0 opacity-0
+         transition-all duration-500 ease-in">
+            <ul class="flex flex-col gap-4 px-6 py-6 font-poppins text-sm">
+                <li><a href="index.html" class="hover:text-[#e9a1a3] font-medium">HOME</a></li>
+                <li><a href="about.html" class="hover:text-[#e9a1a3] font-medium">ABOUT</a></li>
+                <li><a href="shop.html" class="hover:text-[#e9a1a3] font-medium">SHOP</a></li>
+                <li><a href="pricing.html" class="hover:text-[#e9a1a3] font-medium">PRICING</a></li>
+                <li><a href="blog.html" class=" hover:text-[#e9a1a3] font-medium">BLOG</a></li>
+                <li><a href="team.html" class="hover:text-[#e9a1a3] font-medium">OUR TEAM</a></li>
+                <li><a href="faq.html" class="hover:text-[#e9a1a3] font-medium">FAQ</a></li>
+                <li><a href="contact.html" class="hover:text-[#e9a1a3] font-medium">CONTACT</a></li>
             </ul>
         </div>
+
+
     </header>
+
+
+
+    <!-- Header -->
+    <section class="relative flex flex-col items-center justify-center
+         min-h-[55vh]
+         bg-[#F7E0E1]
+         text-center
+         px-6 overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-bottom opacity-20"
+            style="background-image: url('https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ornament.png'); background-size: 40px;">
+        </div>
+
+        <!-- subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-20
+           bg-[radial-gradient(circle_at_1px_1px,#e7bcbc_1px,transparent_1px)]
+           bg-[size:22px_22px]">
+        </div>
+
+        <!-- content -->
+        <div class="relative z-10">
+            <div class="flex flex-col items-center gap-3 mb-6">
+
+                <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+                <span class="text-xs uppercase font-poppins font-bold tracking-[0.25em] text-[#E5989B]">
+                    shop
+                </span>
+                <span class="w-12 h-[.5px] bg-[#E5989B]"></span>
+
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl
+             font-playfair font-normal
+             mb-6 text-black">
+                Shop
+            </h1>
+
+            <p class="text-[#E5989B] font-poppins font-bold tracking-wider">
+                Home <span class="mx-3"><i class="fa-solid fa-chevron-right fa-xs"></i></span> Shop
+            </p>
+        </div>
+    </section>
+
+
+
+
+
+
 
 
 
     <div id="showProduct" class="px-10 my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
 
 
+
+
+    <!-- CART DRAWER -->
+    <div id="cartDrawer"
+        class="cart-drawer fixed top-0 right-0 z-50 h-full w-full md:w-[500px] bg-white shadow-xl translate-x-full transition-transform duration-300">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-lg font-bold">My Cart</h2>
+            <button id="closeDrawer" class="close-cart text-xl">✕</button>
+        </div>
+        <div id="cartItems" class="cart-items p-4 max-h-[90vh] overflow-y-auto"></div>
+    </div>
+
+
+    <!-- Bottom Feature Bar -->
+    <section class="bg-[#FAF1EC] py-14 px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-center">
+
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ribbon.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Unparalleled Quality</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/added-box.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Made with a Mission</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/globe.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Community Come First</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center justify-start gap-3">
+                    <img src="https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/added-truck.png"
+                        alt="">
+                    <span class="font-playfair text-xl mb-2">Free Shipping</span>
+                </div>
+                <p class="text-sm text-start text-gray-600">
+                    Our hijabs & accessories are made to last from best-in-class materials.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
     <!-- Footer Start -->
-    <footer class="bg-black text-gray-200 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6">
+    <footer class="relative bg-black text-gray-200 pt-20 pb-10 overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-bottom opacity-6"
+            style="background-image: url('https://templatekits.themewarrior.com/jamila/wp-content/uploads/sites/99/2024/02/ornament.png'); background-size: 60px;">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6">
 
             <!-- Top Section: Newsletter -->
             <div class="text-center mb-16">
@@ -169,11 +303,12 @@
                 </h2>
                 <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
                     <input type="email" placeholder="Enter your email"
-                        class="w-full sm:w-1/2 px-6 py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
-                    <button type="submit"
-                        class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
-                        Sign Up
-                    </button>
+                        class="w-full sm:w-1/2 px-6 bg-white py-4 rounded-full focus:outline-none text-gray-900 text-lg" />
+                    <a href="signup.html"> <button type="button"
+                            class="bg-[#e5989b] hover:bg-pink-500 text-white font-semibold px-10 py-4 rounded-full text-lg transition">
+                            Sign Up
+                        </button>
+                    </a>
                 </form>
             </div>
 
@@ -252,10 +387,26 @@
 
         </div>
     </footer>
- 
+
+
+    <script>
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            if (menu.classList.contains("max-h-0")) {
+                menu.classList.remove("max-h-0", "opacity-0");
+                menu.classList.add("max-h-[500px]", "opacity-100");
+            } else {
+                menu.classList.add("max-h-0", "opacity-0");
+                menu.classList.remove("max-h-[500px]", "opacity-100");
+            }
+        }
+        toggleMenu()
+    </script>
 
 
     <script type="module" src="app.js"></script>
+    <script type="module" src="productDetail.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 
