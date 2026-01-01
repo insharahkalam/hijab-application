@@ -190,9 +190,11 @@ async function showAllProduct() {
               ${product.description}
         </p>
 
-        <p class=" font-semibold text-lg text-gray-600">
-            Rs: ${product.price}
-        </p>
+         <div>
+          <span class="text-xl font-semibold text-green-600 ">Rs. ${product.price}</span>
+          <del class="text-md font-bold text-gray-400 mx-2">Rs. ${product.rendomprice}</del>
+          
+        </div
 
         <!-- colors -->
         <div class="flex justify-center gap-2 mt-3">
