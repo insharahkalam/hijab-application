@@ -1,0 +1,25 @@
+.swal2-actions {
+    margin: 0px !important;
+
+}
+
+
+.swal2-confirm {
+    width: 250px !important;
+    border-radius: 5px !important;
+    font-size: large !important;
+}
+
+.swal2-confirm:hover {
+    background-color: #2f3c4e;
+}
+
+.swal2-cancel {
+    width: 250px !important;
+    border-radius: 5px !important;
+    font-size: large !important;
+}
+
+.swal2-cancel {
+    background-color: #9ca3af;
+}

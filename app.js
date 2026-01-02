@@ -121,7 +121,7 @@ loginBtn && loginBtn.addEventListener("click", async (e) => {
     }
 
     if (roleData.role === "admin") {
-        window.location.href = "admin.html";
+        window.location.href = "addproduct.html";
     } else {
         window.location.href = "index.html";
     }
