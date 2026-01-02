@@ -128,6 +128,15 @@ let products = []
 const showproductadmin = document.getElementById("showproductadmin")
 
 
+function updateProductInUI(updatedProduct) {
+  const index = products.findIndex(p => p.id === updatedProduct.id)
+  if (index !== -1) {
+    products[index] = { ...products[index], ...updatedProduct }
+    renderProducts()
+  }
+}
+
+
 
 async function showProd() {
   const { data, error } = await client
@@ -251,338 +260,6 @@ window.dltCard = async function (id) {
 
 // ====EDIT CARD========
 
-const updateProduct = document.getElementById("updateProduct")
-
-// window.EditCard = async function (id, name, price, category, image, brand, description , color) {
-//     console.log("edit id:", id)
-//     console.log(name)
-//     console.log(price)
-//     console.log(category)
-//     console.log(image)
-//     console.log(description)
-//     console.log(brand)
-//     console.log(color)
-
-//     const { value: formValues } = await Swal.fire({
-//   title: "Update Product",
-//   html: `NAME:
-//     <input id="swal-input1" class="swal2-input">
-//     Brand:
-//     <input id="swal-input2" class="swal2-input">
-//     Category:
-//     <input id="swal-input3" class="swal2-input">
-//    Rand Price:
-//     <input id="swal-input4" class="swal2-input">
-//     Final Price:
-//     <input id="swal-input5" class="swal2-input">
-//      Description:
-//     <input id="swal-input6" class="swal2-input">
-//      Image:
-//     <input type="file" id="swal-input7" class="swal2-input">
-//      Color:
-//     <input type="color" id="swal-input8" class="swal2-input">
-//   `,
-//   focusConfirm: false,
-//   preConfirm: () => {
-//     return [
-//       document.getElementById("swal-input1").value,
-//       document.getElementById("swal-input2").value
-//     ];
-//   }
-// });
-// if (formValues) {
-//   Swal.fire(JSON.stringify(formValues));
-// }
-
-
-
-// }
-
-
-
-
-
-
-
-// window.EditCard = async function (
-//   id, name, brand, category, price, randomprice, description, image, colorArray
-// ) {
-
-
-//   const { value: formValues } = await Swal.fire({
-//     width: 700,
-//     showConfirmButton: false,
-//     html: `
-//     <div class="relative p-4 my-5 bg-white rounded-xl shadow dark:bg-gray-800 sm:p-5">
-//       <!-- Modal header -->
-//       <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-//         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-//           Update Product
-//         </h3>
-
-//       </div>
-//       <!-- Modal body -->
-//       <form action="#">
-//         <div class="grid gap-4 mb-4 sm:grid-cols-2">
-//           <div>
-//             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-//             <input type="text" name="name" id=""
-//               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${name}" required="">
-//           </div>
-//           <div>
-//             <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-//             <input type="text" name="brand" id=""
-//               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${brand}" required="">
-//           </div>
-//           <div>
-//             <label for="randomprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Random
-//               Price</label>
-//             <input type="number" name="randomprice" id=""
-//               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${randomprice}" required="">
-//           </div>
-
-//           <div>
-//             <label for="finalprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Final
-//               Price</label>
-//             <input type="number" name="finalprice" id=""
-//               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${price}" required="">
-//           </div>
-//           <div>
-//             <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-//             <input type="text" name="category" id=""
-//               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${category}" required="">
-//           </div>
-//          <div class="sm:col-span-2">
-
-//   <input type="file"
-//          id="updateimg"
-//          accept="image/*"
-//          class="bg-gray-50 border py-2.5 px-2 border-gray-300 rounded-lg w-full"
-//          ">
-// </div>
-
-//           <div class="sm:col-span-2">
-//             <label for="description"
-//               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-//             <textarea id="description" rows="7"
-//               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${description}"></textarea>
-//           </div>
-//         </div>
-//         <div>
-//         <button type="button" onClick="updateProductBtn()"
-//           class="text-white  border block items-center bg-gray-800  hover:cursor-pointer  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
-//           Update product
-//         </button>
-//         </div>
-//       </form>
-//     </div>
-//     `,
-
-
-//     preConfirm: () => {
-//       const file = document.getElementById("updateimg").files[0];
-
-//       return {
-//         id,
-//         name: document.getElementById("sw-name").value,
-//         brand: document.getElementById("sw-brand").value,
-//         category: document.getElementById("sw-category").value,
-//         randomPrice: document.getElementById("sw-randprice").value,
-//         finalPrice: document.getElementById("sw-finalprice").value,
-//         description: document.getElementById("sw-desc").value,
-//         imageFile: file || null,
-//       };
-//     }
-
-//   });
-
-//   if (formValues.imageFile) {
-//     const fileName = `${Date.now()}-${formValues.imageFile.name}`;
-
-
-
-//     const { data, error } = await client.storage
-
-//       .storage
-//       .from("Product_image")
-//       .update(fileName, formValues.imageFile, {
-//         upsert: true
-//       })
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log(data, "updatae image data!!");
-
-//     }
-
-//   }
-
-
-//   // =======updateProductBtn=======
-
-//   window.updateProductBtn = function () {
-
-//     console.log("clicekd");
-//     Swal.fire("Updated!", "Product data ready to update 🚀", "success");
-
-//   }
-// }
-
-
-
-
-
-// window.EditCard = async function (
-//   id, name, brand, category, price, randomprice, description, image
-// ) {
-
-//   const { value: formValues } = await Swal.fire({
-//     width: 700,
-//     html: `
-//     <div class="relative p-4 my-5 bg-white rounded-xl shadow dark:bg-gray-800 sm:p-5">
-//        <!-- Modal header -->
-//        <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-//          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-//            Update Product
-//          </h3>
-
-//        </div>
-//        <!-- Modal body -->
-//        <form action="#">
-//          <div class="grid gap-4 mb-4 sm:grid-cols-2">
-//            <div>
-//              <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-//              <input type="text" name="name" id=""
-//                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//                placeholder="${name}" required="">
-//            </div>
-//            <div>
-//              <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-//              <input type="text" name="brand" id=""
-//                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//                placeholder="${brand}" required="">
-//            </div>
-//            <div>
-//              <label for="randomprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Random
-//                Price</label>
-//              <input type="number" name="randomprice" id=""
-//                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//                placeholder="${randomprice}" required="">
-//            </div>
-//            <div>
-//             <label for="finalprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Final
-//               Price</label>
-//             <input type="number" name="finalprice" id=""
-//               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${price}" required="">
-//           </div>
-//           <div>
-//             <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>         <input type="text" name="category" id=""           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//               placeholder="${category}" required="">
-//           </div>
-//          <div class="sm:col-span-2">
-
-//    <input type="file"
-//           id="updateimg"
-//           accept="image/*"
-//           class="bg-gray-50 border py-2.5 px-2 border-gray-300 rounded-lg w-full"
-//           ">
-//  </div>
-
-//            <div class="sm:col-span-2">
-//              <label for="description"
-//                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-//              <textarea id="description" rows="7"
-//                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-//                placeholder="${description}"></textarea>
-//            </div>
-//          </div>
-//          <div>
-//          <button type="button" onClick="updateProductBtn()"
-//            class="text-white  border block items-center bg-gray-800  hover:cursor-pointer  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
-//            Update product
-//          </button>
-//          </div>
-//        </form>
-//      </div>
-//      `,
-
-//     preConfirm: () => {
-//       return {
-//         id,
-//         name: document.getElementById("sw-name").value,
-//         brand: document.getElementById("sw-brand").value,
-//         category: document.getElementById("sw-category").value,
-//         randomPrice: document.getElementById("sw-randprice").value,
-//         finalPrice: document.getElementById("sw-finalprice").value,
-//         description: document.getElementById("sw-desc").value,
-//         imageFile: document.getElementById("updateimg").files[0]
-//       };
-//     }
-//   });
-
-//   if (!formValues) return;
-
-//   // ================= IMAGE REPLACE =================
-//   let imagePath = image; // SAME old image
-
-//   if (formValues.imageFile) {
-//     const fileName = image.split("/").pop(); // same image name
-//     console.log(fileName);
-//     console.log(formValues.imageFile);
-
-//     const { error } = await client.storage
-//       .from("Product_image")
-//       .upload(fileName, formValues.imageFile, {
-//         upsert: true
-//       });
-
-//     if (error) {
-//       console.log("Image error:", error);
-//       return;
-//     }
-//   }
-
-//   // ================= DB UPDATE =================
-
-//   window.updateProductBtn = async function () {
-//     const { data: updData, error: dbError } = await client
-//       .from("product_detail")
-//       .update({
-//         name: formValues.name,
-//         brand: formValues.brand,
-//         category: formValues.category,
-//         randomprice: formValues.randomPrice,
-//         price: formValues.finalPrice,
-//         description: formValues.description,
-//         image: imagePath
-//       })
-//       .eq("id", formValues.id);
-
-//     if (dbError) {
-//       console.log("DB error:", dbError);
-//       return;
-//     } else {
-//       console.log(updData, "update");
-//       Swal.fire("Updated ✅", "Product & Image updated successfully", "success");
-//     }
-
-
-//   }
-
-
-// };
-
-
-
-
-
 window.EditCard = async function (
   id, name, brand, category, price, randomprice, description, image
 ) {
@@ -608,48 +285,48 @@ window.EditCard = async function (
   <div class="grid gap-4 mb-4 sm:grid-cols-2">
 
     <div>
-      <label class="block mb-2 text-sm font-medium">Name</label>
+      <label class="block mb-2 text-start text-lg font-bold">Name</label>
       <input id="sw-name" type="text"
         class="border rounded-lg p-2.5 w-full"
         value="${name}">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium">Brand</label>
+      <label class="block mb-2 text-start text-lg font-bold">Brand</label>
       <input id="sw-brand" type="text"
         class="border rounded-lg p-2.5 w-full"
         value="${brand}">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium">Random Price</label>
+      <label class="block mb-2 text-start text-lg font-bold">Random Price</label>
       <input id="sw-randprice" type="number"
         class="border rounded-lg p-2.5 w-full"
         value="${randomprice}">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium">Final Price</label>
+      <label class="block mb-2 text-start text-lg font-bold">Final Price</label>
       <input id="sw-finalprice" type="number"
         class="border rounded-lg p-2.5 w-full"
         value="${price}">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium">Category</label>
+      <label class="block mb-2 text-start text-lg font-bold">Category</label>
       <input id="sw-category" type="text"
         class="border rounded-lg p-2.5 w-full"
         value="${category}">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium">Update Image</label>
+      <label class="block mb-2 text-start text-lg font-bold">Update Image</label>
       <input type="file" id="sw-updateimg"
         class="border rounded-lg p-2.5  w-full">
     </div>
 
     <div class="sm:col-span-2">
-      <label class="block mb-2 text-sm font-medium">Description</label>
+      <label class="block mb-2 text-start text-lg font-bold">Description</label>
       <textarea id="sw-desc" rows="6"
         class="border rounded-lg p-2.5 w-full">${description}</textarea>
     </div>
@@ -714,6 +391,17 @@ window.EditCard = async function (
           })
           .eq("id", formValues.id);
         console.log(image);
+
+        updateProductInUI({
+          id: formValues.id,
+          name: formValues.name,
+          brand: formValues.brand,
+          category: formValues.category,
+          rendomprice: formValues.randomPrice,
+          price: formValues.finalPrice,
+          description: formValues.description,
+          image: updimgUrl
+        })
 
 
         if (dbError) {
