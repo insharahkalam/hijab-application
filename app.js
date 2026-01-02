@@ -14,34 +14,48 @@ export default client;
 const password = document.getElementById("password");
 const email = document.getElementById("email");
 const username = document.getElementById("name");
+const profileImg = document.getElementById("profileImg");
 const btn = document.getElementById("btn");
 
 btn && btn.addEventListener("click", async (e) => {
     e.preventDefault();
 
-    // Trim values
     const userValue = username.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
 
-    // Username validation
-    if (userValue === "" || emailValue === "" || passwordValue === "") {
-        alert("please fill all field!");
+    // Empty fields
+    if (userValue === "" || emailValue === "" || passwordValue === "" || !profileImg.files[0]) {
+        Swal.fire({
+            icon: "warning",
+            title: "Oops!",
+            text: "Please fill all fields"
+        });
         return;
     }
 
+    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailValue)) {
-        alert("Please enter a valid email");
+        Swal.fire({
+            icon: "error",
+            title: "Invalid Email",
+            text: "Please enter a valid email address"
+        });
         return;
     }
 
+    // Password validation
     if (passwordValue.length < 6) {
-        alert("Password must be at least 6 characters");
+        Swal.fire({
+            icon: "error",
+            title: "Weak Password",
+            text: "Password must be at least 6 characters"
+        });
         return;
     }
 
-    // Supabase Signup
+    // Signup
     const { data, error } = await client.auth.signUp({
         email: emailValue,
         password: passwordValue,
@@ -54,30 +68,66 @@ btn && btn.addEventListener("click", async (e) => {
     });
 
     if (error) {
-        alert(error.message);
-        console.log(error);
-    } else {
-        alert("Account created successfully!");
-        console.log(data);
-        if (data) {
-            const { error } = await client
-                .from('all-users-data')
-                .insert({ name: data.user.user_metadata.username, email: data.user.email, role: data.user.user_metadata.role, user_id: data.user.id })
-            if (error) {
-                console.log(error, "insert error");
-            } else {
-                console.log("data insert in table.");
-            }
+        Swal.fire({
+            icon: "error",
+            title: "Signup Failed",
+            text: error.message
+        });
+        return;
+    }
 
-        }
-        else {
-            console.log(error);
-        }
+    // Success alert
+    Swal.fire({
+        icon: "success",
+        title: "Account Created 🎉",
+        text: "Your account has been created successfully",
+        timer: 2000,
+        showConfirmButton: false
+    });
+
+    // ===== Image Upload =====
+    const profileImgFile = profileImg.files[0];
+    const fileName = `${Date.now()}-${profileImgFile.name}`;
+
+    const { error: uploadError } = await client.storage
+        .from("ecommerce_profile")
+        .upload(fileName, profileImgFile, { upsert: true });
+
+    if (uploadError) {
+        Swal.fire({
+            icon: "error",
+            title: "Upload Failed",
+            text: "Profile image upload failed"
+        });
+        return;
+    }
+
+    // ===== Get Public URL =====
+    const { data: imgData } = client.storage
+        .from("ecommerce_profile")
+        .getPublicUrl(fileName);
+
+    const profileImageUrl = imgData.publicUrl;
+
+    // ===== Insert User Data =====
+    const { error: insertError } = await client
+        .from("all-users-data")
+        .insert({
+            name: data.user.user_metadata.username,
+            email: data.user.email,
+            role: data.user.user_metadata.role,
+            user_id: data.user.id,
+            profile_img: profileImageUrl,
+        });
+
+    if (!insertError) {
         window.location.href = "login.html";
+
     }
 });
 
-// =============login========
+
+// ============= login ============
 
 const loginEmail = document.getElementById("loginEmail");
 const loginPass = document.getElementById("loginPass");
@@ -88,15 +138,32 @@ loginBtn && loginBtn.addEventListener("click", async (e) => {
 
     // ❌ empty check
     if (loginEmail.value.trim() === "" || loginPass.value.trim() === "") {
-        alert("Please fill all fields");
+        Swal.fire({
+            icon: "warning",
+            title: "Missing Fields",
+            text: "Please fill all fields"
+        });
         return;
     }
 
     // ❌ password length check
-    if (loginPass.length < 6) {
-        alert("Password must be at least 6 characters");
+    if (loginPass.value.length < 6) {
+        Swal.fire({
+            icon: "error",
+            title: "Invalid Password",
+            text: "Password must be at least 6 characters"
+        });
         return;
     }
+
+    // ⏳ loading
+    Swal.fire({
+        title: "Logging in...",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
 
     const { data, error } = await client.auth.signInWithPassword({
         email: loginEmail.value,
@@ -104,10 +171,15 @@ loginBtn && loginBtn.addEventListener("click", async (e) => {
     });
 
     if (error) {
-        alert(error.message);
+        Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: error.message
+        });
+        return;
     }
 
-    let userId = data.user.id
+    let userId = data.user.id;
 
     const { data: roleData, error: roleError } = await client
         .from("all-users-data")
@@ -116,31 +188,84 @@ loginBtn && loginBtn.addEventListener("click", async (e) => {
         .single();
 
     if (roleError) {
-        alert("Role fetch nahi ho raha");
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Role fetch nahi ho raha"
+        });
         return;
     }
 
-    if (roleData.role === "admin") {
-        window.location.href = "addproduct.html";
-    } else {
-        window.location.href = "index.html";
-    }
+    // ✅ success + redirect
+    Swal.fire({
+        icon: "success",
+        title: "Login Successful 🎉",
+        text: "Redirecting...",
+        timer: 1500,
+        showConfirmButton: false
+    });
+
+    setTimeout(() => {
+        if (roleData.role === "admin") {
+            window.location.href = "dashboard.html";
+        } else {
+            window.location.href = "index.html";
+        }
+    }, 1500);
 });
 
-// =========LOGOUT=======
 
-const logout = document.getElementById("logout")
+// ========= LOGOUT =========
+
+const logout = document.getElementById("logout");
 
 logout && logout.addEventListener("click", async () => {
-    const { error } = await client.auth.signOut()
-    if (error) {
-        console.log(error, "logout error");
-    } else {
-        alert("logout successfully!")
-        window.location.href = "login.html"
-    }
-})
 
+    // 🔔 confirm before logout
+    const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You want to logout from your account",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#2563eb",
+        cancelButtonColor: "#475569",
+        confirmButtonText: "Yes, logout",
+        cancelButtonText: "Cancel"
+    });
+
+    if (!result.isConfirmed) return;
+
+    // ⏳ loading
+    Swal.fire({
+        title: "Logging out...",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+    const { error } = await client.auth.signOut();
+
+    if (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Logout Failed",
+            text: error.message
+        });
+    } else {
+        Swal.fire({
+            icon: "success",
+            title: "Logged out 👋",
+            text: "See you again!",
+            timer: 1500,
+            showConfirmButton: false
+        });
+
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1500);
+    }
+});
 
 
 

@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Playfair Display', serif;
@@ -134,82 +134,96 @@
   <div class="relative w-full max-w-xl mx-auto">
 
     <!-- Modal content -->
-    <div class="relative p-4 my-5 bg-white rounded-xl shadow dark:bg-gray-800 sm:p-5">
+    <div class="relative p-6 my-8 bg-[#f6efed] rounded-3xl border border-[#e9a1a3]/40">
+
       <!-- Modal header -->
-      <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+      <div class="flex justify-between items-center pb-4 mb-6 border-b border-[#e9a1a3]/40">
+        <h3 class="text-2xl font-bold tracking-wide text-[#7a3b3d]">
           Add Product
         </h3>
-
       </div>
+
       <!-- Modal body -->
       <form action="#">
         <div class="grid gap-4 mb-4 sm:grid-cols-2">
           <div>
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-            <input type="text" name="name" id="productName"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Type product name" required="">
+            <label for="name" class="block mb-2 text-md font-semibold text-[#7a3b3d]">Name</label>
+            <input type="text" name="name" id="productName" class="bg-white border border-[#e9a1a3]/40 text-gray-800 text-sm rounded-xl
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]
+block w-full p-3" placeholder="Type product name" required="">
           </div>
           <div>
-            <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-            <input type="text" name="brand" id="brand"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Product brand" required="">
+            <label for="brand" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Brand</label>
+            <input type="text" name="brand" id="brand" class="bg-white border border-[#e9a1a3]/40 text-gray-800 text-sm rounded-xl
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]
+block w-full p-3" placeholder="Product brand" required="">
           </div>
           <div>
-            <label for="randomprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Random
+            <label for="randomprice" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Random
               Price</label>
-            <input type="number" name="randomprice" id="randomprice"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="$2999" required="">
+            <input type="number" name="randomprice" id="randomprice" class="bg-white border border-[#e9a1a3]/40 text-gray-800 text-sm rounded-xl
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]
+block w-full p-3" placeholder="$2999" required="">
           </div>
 
           <div>
-            <label for="finalprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Final
+            <label for="finalprice" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Final
               Price</label>
-            <input type="number" name="finalprice" id="finalprice"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="$1999" required="">
+            <input type="number" name="finalprice" id="finalprice" class="bg-white border border-[#e9a1a3]/40 text-gray-800 text-sm rounded-xl
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]
+block w-full p-3" placeholder="$1999" required="">
           </div>
           <div>
-            <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-            <input type="text" name="category" id="category"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Product category" required="">
+            <label for="category" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Category</label>
+            <input type="text" name="category" id="category" class="bg-white border border-[#e9a1a3]/40 text-gray-800 text-sm rounded-xl
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]
+block w-full p-3" placeholder="Product category" required="">
           </div>
           <div>
-            <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
-            <input type="file" name="img" id="productImg"
-              class="bg-gray-50 border py-2.5 px-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              required="">
+            <label for="image" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Image</label>
+            <input type="file" name="img" id="productImg" class="bg-white border border-[#e9a1a3]/40 text-gray-800 text-sm rounded-xl
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]
+block w-full p-3" required="">
           </div>
 
           <div>
-            <label for="Color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Color</label>
-            <div class="flex items-center gap-3 justify-center">
-              <input type="color" id="color" class="w-full h-11 cursor-pointer">
+            <label for="Color" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Color</label>
+            <div class="flex items-center gap-3">
+              <input type="color" id="color" class="w-full h-11 rounded-lg  border-[#e9a1a3]/40 cursor-pointer">
 
-              <button id="colorBtn"
-                class="border text-white font-bold text-xs px-5 text-nowrap py-2.5 hover:cursor-pointer rounded-lg ">Add
-                Color</button>
-
+              <button id="colorBtn" class="bg-[#FFA2A2] hover:cursor-pointer
+           text-white font-semibold text-xs
+           px-6 py-3 text-nowrap rounded-xl transition">
+                Add Color
+              </button>
             </div>
-            <div id="addmore" class="flex flex-wrap gap-1 mt-2"></div>
+
+            <div id="addmore" class="flex flex-wrap gap-2 mt-3"></div>
+
           </div>
 
           <div class="sm:col-span-2">
-            <label for="description"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-            <textarea id="description" rows="4"
-              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Write product description here"></textarea>
+            <label for="description" class="block mb-2 text-md font-semibold text-[#7a3b3d] ">Description</label>
+            <textarea id="description" class="block p-3 w-full text-sm text-gray-800
+bg-white rounded-xl border border-[#e9a1a3]/40
+focus:ring-2 focus:ring-[#e9a1a3]
+focus:border-[#e9a1a3]" placeholder="Write product description here"></textarea>
           </div>
         </div>
-        <button type="button" id="addProductBtn"
-          class="text-white border inline-flex items-center bg-gray-800  hover:cursor-pointer  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
-          Add product
+        <button type="button" id="addProductBtn" class="w-full mt-4 bg-[#FFA2A2]
+         hover:cursor-pointer
+         text-white font-bold tracking-wide
+         rounded-full text-sm px-6 py-4
+         transition shadow-md">
+          ADD PRODUCT
         </button>
+
       </form>
     </div>
   </div>
@@ -382,7 +396,6 @@
     }
     toggleMenu()
   </script>
-
   
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

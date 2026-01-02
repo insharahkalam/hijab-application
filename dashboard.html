@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="md:hidden flex justify-between items-center bg-gray-900 text-white p-4">
+    <h2 class="text-xl font-extrabold uppercase">Covid Survey</h2>
+    <button id="menuBtn" class="text-3xl">&#9776;</button>
+  </div>
+
+  <div class="flex">
+
+    <aside id="sidebar"
+      class="w-64 h-[162vh] bg-gray-900 text-white p-5 fixed top-0 left-0 transform -translate-x-full md:static md:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto">
+      <img src="./images/logo.png" alt="">
+
+      <nav class="space-y-2 pt-10">
+        <a href="dashboard.html" class="block py-2 px-3 rounded text-xl font-bold bg-gray-700">Dashboard</a>
+        <a href="addproduct.html" class="block py-2 px-3 rounded text-xl font-bold  hover:bg-gray-700">Add Product</a>
+        <a href="allProduct.html" class="block py-2 px-3 rounded text-xl  font-bold hover:bg-gray-700">All Products</a>
+        <a href="allUser.html" class="block py-2 px-3 rounded text-xl  font-bold hover:bg-gray-700">Customers</a>
+        <a href="#" class="block py-2 px-3 rounded text-xl  font-bold hover:bg-gray-700">Profile</a>
+      </nav>
+
+      <button id="logout" class="mt-5 w-full bg-red-600 py-4 font-bold text-xl rounded-full hover:bg-red-700">
+        Logout
+      </button>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 p-5 md:ml-0 ml-0 md:mt-0 mt-16">
+
+
+
+      <!-- CARDS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2  gap-5 mb-6">
+
+        <div
+          class="cursor-pointer bg-white p-6 h-[200px] shadow-xl transition-transform duration-500 hover:scale-105 rounded-3xl">
+          <h2 class="text-red-500 font-extrabold text-5xl  ">Total Users</h2>
+          <p class="text-7xl text-gray-500 mt-3 font-extrabold" id="userCount">0</p>
+        </div>
+
+        <div
+          class="cursor-pointer bg-white p-6 h-[200px] transition-transform duration-500 hover:scale-105 shadow-xl rounded-3xl">
+          <h2 class="text-yellow-400 font-extrabold text-5xl  ">Total Products</h2>
+          <p class="text-7xl text-gray-500 mt-3 font-extrabold" id="mcqsCount">0</p>
+        </div>
+
+      </div>
+      <!-- USERS TABLE -->
+      <div class="bg-white p-6 shadow-xl rounded-2xl">
+        <h2 class="text-2xl md:text-4xl text-gray-900 font-bold mb-4">Users List</h2>
+
+        <div class="overflow-x-auto rounded-lg border border-gray-200">
+          <table class="w-full text-sm md:text-base">
+            <thead class="bg-gray-300 text-gray-700">
+              <tr>
+                <th class="p-3 text-start font-semibold text-2xl">User_ID</th>
+                <th class="p-3 text-start font-semibold text-2xl">Name</th>
+                <th class="p-3 text-start font-semibold text-2xl">Email</th>
+              </tr>
+            </thead>
+
+            <tbody id="userTable" class="divide-y divide-gray-200"></tbody>
+          </table>
+        </div>
+
+        <!-- VIEW ALL BUTTON -->
+        <div class="mt-4 flex justify-end">
+          <a href="allUser.html"
+            class="bg-[#111827] text-2xl text-white px-16 py-2 rounded-lg font-semibold shadow-md transition duration-500 transform hover:scale-105">
+            View All
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full"); // show/hide sidebar
+    });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+
+</html>

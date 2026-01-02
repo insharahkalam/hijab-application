@@ -13,7 +13,7 @@
 
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-black text-white">
+<body class="min-h-screen flex my-5 items-center justify-center bg-gradient-to-b from-slate-900 to-black text-white">
 
     <div class="w-full max-w-md bg-slate-900/90 rounded-xl shadow-2xl p-7">
         <h2 class="text-center text-xl font-semibold mb-6">Create your Account</h2>
@@ -31,6 +31,11 @@
         <!-- Password -->
         <label class="text-sm text-slate-300">Password</label>
         <input type="password" id="password" placeholder="••••••••"
+            class="w-full mt-1 mb-4 px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-slate-500">
+
+        <!-- Profile -->
+        <label class="text-sm text-slate-300">Profile Pic</label>
+        <input type="file" id="profileImg"
             class="w-full mt-1 mb-4 px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder-slate-500">
 
         <!-- Divider -->
@@ -66,6 +71,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="app.js"></script>
 </body>
 

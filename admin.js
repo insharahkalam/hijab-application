@@ -14,20 +14,25 @@ const { data, error: adminErr } = await client
 
 console.log(data);
 
-if (data.role != "admin") {
-  alert("access denied");
-  window.location.href = "./login.html";
+// ❌ not admin
+if (data.role !== "admin") {
+  Swal.fire({
+    icon: "error",
+    title: "Access Denied",
+    text: "You are not authorized to access this page",
+    confirmButtonColor: "#2563eb"
+  }).then(() => {
+    window.location.href = "./login.html";
+  });
 } else {
+  console.log("Admin access granted");
   console.log(adminErr);
-
 }
-
 
 // ======== add color ========
 const color = document.getElementById("color")
 const addmore = document.getElementById("addmore")
 const colorBtn = document.getElementById("colorBtn")
-
 
 colorBtn && colorBtn.addEventListener("click", (e) => {
 
@@ -45,19 +50,14 @@ colorBtn && colorBtn.addEventListener("click", (e) => {
     `
   newcolor.style.backgroundColor = selectedColor
   console.log(selectedColor);
-
   allColor.push(selectedColor)
-
   console.log(allColor);
-
   wrapper.appendChild(newcolor)
   addmore.appendChild(wrapper)
 
 })
 
-
-
-// ========= Add product in supabase table=======
+// =====Add to supabase=======
 
 const addProductBtn = document.getElementById("addProductBtn")
 const productName = document.getElementById("productName")
@@ -70,7 +70,6 @@ const description = document.getElementById("description")
 let allColor = []
 
 addProductBtn && addProductBtn.addEventListener("click", async () => {
-
   if (
     productName.value.trim() === "" ||
     brand.value.trim() === "" ||
@@ -81,52 +80,95 @@ addProductBtn && addProductBtn.addEventListener("click", async () => {
     description.value.trim() === "" ||
     allColor.length === 0
   ) {
-    alert("Please fill all fields")
+    Swal.fire({
+      icon: "warning",
+      title: "Missing Fields",
+      text: "Please fill all fields"
+    })
     return
-  } else {
-
-    let file = productImg.files[0]
-
-
-    const { data, error: storageError } = await client
-      .storage
-      .from('Product_image')
-      .upload(file.name, file,
-        { upsert: true })
-
-    if (storageError) {
-      console.log(storageError);
-    } else {
-      console.log("uploaded img on storage", data);
-      const { data: publicData } = client
-        .storage
-        .from('Product_image')
-        .getPublicUrl(file.name)
-      if (publicData) {
-        console.log(publicData.publicUrl);
-        window.productUrl = publicData.publicUrl
-      }
-    }
-
-    const { error } = await client
-      .from('product_detail')
-      .insert({ name: productName.value, brand: brand.value, rendomprice: randomprice.value, price: finalprice.value, category: category.value, color: allColor, description: description.value, image: productUrl })
-
-    if (error) {
-      console.log(error, "inserted error");
-    } else {
-      alert("successfully added!")
-    }
   }
 
+  // ⏳ loading
+  Swal.fire({
+    title: "Adding Product...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading()
+    }
+  })
 
+  let file = productImg.files[0]
+
+  // ===== upload image =====
+  const { data, error: storageError } = await client
+    .storage
+    .from('Product_image')
+    .upload(file.name, file, { upsert: true })
+
+  if (storageError) {
+    Swal.fire({
+      icon: "error",
+      title: "Upload Failed",
+      text: "Product image upload failed"
+    })
+    console.log(storageError)
+    return
+  }
+
+  const { data: publicData } = client
+    .storage
+    .from('Product_image')
+    .getPublicUrl(file.name)
+
+  if (publicData) {
+    window.productUrl = publicData.publicUrl
+  }
+
+  // ===== insert product =====
+  const { error } = await client
+    .from('product_detail')
+    .insert({
+      name: productName.value,
+      brand: brand.value,
+      rendomprice: randomprice.value,
+      price: finalprice.value,
+      category: category.value,
+      color: allColor,
+      description: description.value,
+      image: productUrl
+    })
+
+  if (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Error in adding Product"
+    })
+    console.log(error, "inserted error")
+  } else {
+    Swal.fire({
+      icon: "success",
+      title: "Success 🎉",
+      text: "Product added successfully !",
+      timer: 1500,
+      showConfirmButton: false
+    })
+
+    // optional: form reset
+    productName.value = ""
+    brand.value = ""
+    randomprice.value = ""
+    finalprice.value = ""
+    category.value = ""
+    description.value = ""
+    allColor = []
+  }
 })
 
 // ======fetch product on admin side========
 
 let products = []
 const showproductadmin = document.getElementById("showproductadmin")
-
 
 function updateProductInUI(updatedProduct) {
   const index = products.findIndex(p => p.id === updatedProduct.id)
@@ -135,8 +177,6 @@ function updateProductInUI(updatedProduct) {
     renderProducts()
   }
 }
-
-
 
 async function showProd() {
   const { data, error } = await client
@@ -147,15 +187,11 @@ async function showProd() {
     console.log(error, "fetching error")
     return
   }
-
   products = data
   renderProducts()
 }
 
-
 showProd()
-
-
 
 function renderProducts() {
   showproductadmin.innerHTML = ""
@@ -242,21 +278,59 @@ function renderProducts() {
 // ======Delete card ===========
 
 window.dltCard = async function (id) {
-  const confirmDel = confirm("Are you sure you want to delete?")
-  if (!confirmDel) return
+
+  // 🔔 confirm delete
+  const confirmDel = await Swal.fire({
+    title: "Are you sure?",
+    text: "This product will be permanently deleted",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#dc2626",
+    cancelButtonColor: "#475569",
+    confirmButtonText: "Yes, delete it",
+    cancelButtonText: "Cancel"
+  })
+
+  if (!confirmDel.isConfirmed) return
+
+  // ⏳ loading
+  Swal.fire({
+    title: "Deleting...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading()
+    }
+  })
 
   const { error } = await client
     .from("product_detail")
     .delete()
     .eq("id", id)
 
-  if (!error) {
-    // ✅ update UI without reload
-    products = products.filter(p => p.id !== id)
-    renderProducts()
-    alert("Deleted successfully!")
+  if (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Delete Failed",
+      text: "Product delete nahi ho saka"
+    })
+    console.log(error)
+    return
   }
+
+  // ✅ update UI without reload
+  products = products.filter(p => p.id !== id)
+  renderProducts()
+
+  Swal.fire({
+    icon: "success",
+    title: "Deleted!",
+    text: "Product successfully deleted",
+    timer: 1200,
+    showConfirmButton: false
+  })
 }
+
+
 
 // ====EDIT CARD========
 
@@ -408,12 +482,7 @@ window.EditCard = async function (
           console.log("DB error:", dbError);
           return;
         }
-
-        Swal.fire("Updated ✅", "Product & Image updated successfully", "success");
-
-
-
-
+        Swal.fire("Updated", "Product & Image updated successfully", "success");
       }
     }
   }
