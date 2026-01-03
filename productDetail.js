@@ -48,7 +48,7 @@ async function getSingleProduct() {
       <div>
         <img
           src="${data.image}"
-          class="w-full h-full object-cover shadow border border-gray-300 rounded-xl"
+          class="w-full h-[450px] object-cover shadow border border-gray-300 rounded-xl"
         />
 
       </div>
