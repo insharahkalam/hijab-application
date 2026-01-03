@@ -267,8 +267,55 @@ logout && logout.addEventListener("click", async () => {
     }
 });
 
+const mobilelogout = document.getElementById("mobilelogout");
 
+mobilelogout && mobilelogout.addEventListener("click", async () => {
 
+    // 🔔 confirm before logout
+    const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "You want to logout from your account",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#2563eb",
+        cancelButtonColor: "#475569",
+        confirmButtonText: "Yes, logout",
+        cancelButtonText: "Cancel"
+    });
+
+    if (!result.isConfirmed) return;
+
+    // ⏳ loading
+    Swal.fire({
+        title: "Logging out...",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+    const { error } = await client.auth.signOut();
+
+    if (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Logout Failed",
+            text: error.message
+        });
+    } else {
+        Swal.fire({
+            icon: "success",
+            title: "Logged out 👋",
+            text: "See you again!",
+            timer: 1500,
+            showConfirmButton: false
+        });
+
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1500);
+    }
+});
 
 // ===========Fetch product ==========
 
@@ -339,3 +386,79 @@ window.productCard = function (id) {
     window.location.href = `productDetail.html?id=${id}`
 
 }
+
+const checkoutBtn = document.getElementById("checkoutBtn")
+const checkoutName = document.getElementById("checkoutName")
+const checkoutEmail = document.getElementById("checkoutEmail")
+const checkoutAddress = document.getElementById("checkoutAddress")
+const checkoutCity = document.getElementById("checkoutCity")
+const checkoutOption = document.getElementById("checkoutOption")
+const checkoutZip = document.getElementById("checkoutZip")
+
+checkoutBtn && checkoutBtn.addEventListener("click", async (e) => {
+    e.preventDefault()
+
+    // ✅ Validation
+    if (
+        !checkoutName.value.trim() ||
+        !checkoutEmail.value.trim() ||
+        !checkoutAddress.value.trim() ||
+        !checkoutCity.value.trim() ||
+        !checkoutZip.value.trim() ||
+        !checkoutOption.value.trim()
+    ) {
+        return Swal.fire({
+            title: 'Oops!',
+            text: 'Please fill in all required fields before placing the order.',
+            icon: 'error',
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'OK'
+        });
+    }
+
+    try {
+        // ✅ Supabase insert
+        const { error } = await client
+            .from('order_placed')
+            .insert({
+                name: checkoutName.value,
+                email: checkoutEmail.value,
+                address: checkoutAddress.value,
+                city: checkoutCity.value,
+                zipCode: checkoutZip.value,
+                country: checkoutOption.value
+            });
+
+        if (error) throw error;
+
+        // ✅ Success Alert
+        await Swal.fire({
+            title: 'Order Placed!',
+            text: 'Your order has been successfully placed.',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false
+        });
+
+        // ✅ Optional: clear form
+        checkoutName.value = ''
+        checkoutEmail.value = ''
+        checkoutAddress.value = ''
+        checkoutCity.value = ''
+        checkoutZip.value = ''
+        checkoutOption.value = ''
+
+        window.location.href = "shipping.html";
+
+    } catch (err) {
+        console.error("Checkout failed:", err);
+        Swal.fire({
+            title: 'Error!',
+            text: 'Something went wrong while placing your order.',
+            icon: 'error',
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'OK'
+        });
+    }
+
+});

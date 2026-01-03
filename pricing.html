@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pricing</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -73,17 +73,17 @@
           <span class="font-poppins font-bold text-md">(+021) 345 678 910</span>
         </div>
         <div class="flex items-center gap-4 text-base">
-          
+
           <a href="signup.html"><i class="fa-regular fa-user"></i></a>
 
-          
+
           <div id="cartIcon" class="relative cursor-pointer">
             <i class=" fa-solid fa-bag-shopping"></i>
           </div>
 
-           <div id="logout" class="relative cursor-pointer">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                    </div>
+          <div id="logout" class="relative cursor-pointer">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </div>
 
 
         </div>
@@ -91,13 +91,16 @@
 
       <!-- MOBILE RIGHT (ICONS + TOGGLE) -->
       <div class="flex items-center gap-4 text-lg lg:hidden">
-    
         <a href="signup.html">
           <i class="fa-regular fa-user"></i>
         </a>
 
-        <div class="relative">
-          <i class="fa-solid fa-bag-shopping"></i>
+        <div id="mobileCartIcon" class="relative">
+          <i class=" fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <div id="mobilelogout" class="relative cursor-pointer">
+          <i class="fa-solid fa-right-from-bracket"></i>
         </div>
 
         <!-- TOGGLE -->
@@ -531,15 +534,15 @@
   </footer>
 
 
-<!-- CART DRAWER -->
-    <div id="cartDrawer"
-        class="cart-drawer fixed top-0 right-0 z-50 h-full w-full md:w-[500px] bg-white shadow-xl translate-x-full transition-transform duration-300">
-        <div class="flex justify-between items-center p-4 border-b">
-            <h2 class="text-lg font-bold">My Cart</h2>
-            <button id="closeDrawer" class="close-cart text-xl">✕</button>
-        </div>
-        <div id="cartItems" class="cart-items p-4 max-h-[90vh] overflow-y-auto"></div>
+  <!-- CART DRAWER -->
+  <div id="cartDrawer"
+    class="cart-drawer fixed top-0 right-0 z-50 h-full w-full md:w-[500px] bg-white shadow-xl translate-x-full transition-transform duration-300">
+    <div class="flex justify-between items-center p-4 border-b">
+      <h2 class="text-lg font-bold">My Cart</h2>
+      <button id="closeDrawer" class="close-cart text-xl">✕</button>
     </div>
+    <div id="cartItems" class="cart-items p-4 max-h-[90vh] overflow-y-auto"></div>
+  </div>
 
 
   <script>

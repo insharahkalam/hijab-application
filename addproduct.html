@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Add product</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -71,11 +71,13 @@
           </li>
 
           <li><a href="addproduct.html"
-              class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">Add product</a>
+              class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">Add
+              product</a>
           </li>
 
           <li><a href="allProduct.html"
-              class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">All product</a>
+              class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">All
+              product</a>
           </li>
 
         </ul>
@@ -92,11 +94,6 @@
 
       <!-- MOBILE RIGHT (ICONS + TOGGLE) -->
       <div class="flex items-center gap-4 text-lg lg:hidden">
-
-        <a href="signup.html">
-          <i class="fa-regular fa-user"></i>
-        </a>
-
         <!-- TOGGLE -->
         <button onclick="toggleMenu()">
           <i class="fa-solid fa-bars"></i>
@@ -117,12 +114,19 @@
         </li>
 
         <li><a href="addproduct.html"
-            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">Add product</a>
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">Add
+            product</a>
         </li>
 
         <li><a href="allProduct.html"
-            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">All product</a>
+            class="hover:text-[#e9a1a3] text-sm font-semibold tracking-widest text-gray-900 uppercase">All
+            product</a>
         </li>
+
+        <button id="logout"
+          class="relative rounded-full bg-[#E9A1A3] hover:bg-red-300 text-white font-extrabold border px-8 py-4 cursor-pointer">
+          LOGOUT <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
       </ul>
     </div>
 
@@ -396,7 +400,7 @@ focus:border-[#e9a1a3]" placeholder="Write product description here"></textarea>
     }
     toggleMenu()
   </script>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>

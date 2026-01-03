@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="md:hidden flex justify-between items-center bg-gray-900 text-white p-4">
+        <img width="150" src="./images/logo.png" alt="">
+        <button id="menuBtn" class="text-3xl">&#9776;</button>
+    </div>
+
+    <div class="flex">
+
+        <aside id="sidebar"
+            class="w-64 h-[140vh] bg-gray-900 text-white p-5 fixed top-0 left-0 transform -translate-x-full md:static md:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto">
+            <img src="./images/logo.png" alt="">
+
+            <nav class="space-y-2 pt-10">
+                <a href="dashboard.html" class="block py-2 px-3 rounded text-xl font-bold bg-gray-700">Dashboard</a>
+                <a href="addproduct.html" class="block py-2 px-3 rounded text-xl font-bold  hover:bg-gray-700">Add
+                    Product</a>
+                <a href="allProduct.html" class="block py-2 px-3 rounded text-xl  font-bold hover:bg-gray-700">All
+                    Products</a>
+                <a href="profile.html" class="block py-2 px-3 rounded text-xl  font-bold hover:bg-gray-700">Profile</a>
+            </nav>
+
+            <button id="logout" class="mt-5 w-full bg-red-600 py-4 font-bold text-xl rounded-full hover:bg-red-700">
+                Logout
+            </button>
+
+        </aside>
+
+        <!-- Main Right -->
+        <main class="flex-1 p-8">
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow p-8">
+                <!-- Profile Header -->
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Your Profile</h2>
+
+                <!-- Profile Picture + Form as a single block -->
+                <div class="flex flex-col items-center space-y-6">
+                    <!-- Profile Picture -->
+                    <img id="profile_pic_update" class="object-cover w-40 h-40 rounded-full ring-2 ring-indigo-300"
+                        src="https://www.shutterstock.com/image-vector/avatar-gender-neutral-silhouette-vector-600nw-2470054311.jpg"
+                        alt="Profile Picture">
+
+                    <!-- Picture Buttons -->
+                    <div class="flex space-x-4">
+                        <button id="chanagePicture"
+                            class="py-2 px-6 text-base font-medium text-white bg-indigo-700 rounded-lg hover:bg-indigo-800">
+                            Change Picture
+                        </button>
+                        <input id="profileUpdate" class="hidden" type="file">
+                        <button id="deletPicture"
+                            class="py-2 px-6 text-base font-medium text-indigo-700 bg-gray-200 rounded-lg hover:bg-gray-300">
+                            Delete Picture
+                        </button>
+                    </div>
+
+                    <!-- Profile Form -->
+                    <div class="w-full mt-6 space-y-4">
+                        <div>
+                            <label for="fullname_" class="block text-lg font-medium text-gray-700">Your Name</label>
+                            <input type="text" id="fullname_"
+                                class="w-full p-3 mt-1 text-gray-900 bg-gray-100 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                                placeholder="Your Name">
+                        </div>
+
+                        <div>
+                            <label for="profile_email" class="block text-lg font-medium text-gray-700">Your
+                                Email</label>
+                            <input type="email" id="profile_email"
+                                class="w-full p-3 mt-1 text-gray-900 bg-gray-100 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                                placeholder="Your Email">
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="flex justify-center sm:justify-start mt-4">
+                            <button id="saveBtn"
+                                class="px-8 py-3 text-white bg-indigo-700 rounded-lg hover:bg-indigo-800">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const sidebar = document.getElementById("sidebar");
+
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("-translate-x-full"); // show/hide sidebar
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>

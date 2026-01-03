@@ -487,3 +487,311 @@ window.EditCard = async function (
     }
   }
 };
+
+
+// =========PROFILE PIC SHOW =======
+
+const profile_pic_update = document.getElementById("profile_pic_update");
+const deletPicture = document.getElementById("deletPicture");
+const chanagePicture = document.getElementById("chanagePicture");
+const profileUpdate = document.getElementById("profileUpdate");
+const profile_email = document.getElementById("profile_email");
+const fullname_ = document.getElementById("fullname_");
+const saveBtn = document.getElementById("saveBtn");
+
+let updPublicUrl = null;
+
+try {
+  const { data: profileShow, error: profileShowErr } = await client.auth.getUser();
+  if (profileShowErr) throw profileShowErr;
+
+  const adminUserid = profileShow.user.id;
+
+  try {
+    // ========Fetch admin profile========
+    const { data: fetchadminProfileData, error: fetchadminProfileErr } = await client
+      .from('all-users-data')
+      .select("*")
+      .eq("user_id", adminUserid)
+      .single();
+
+    if (fetchadminProfileErr) throw fetchadminProfileErr;
+
+    profile_email.placeholder = fetchadminProfileData.email || "";
+    fullname_.placeholder = fetchadminProfileData.name || "";
+    updPublicUrl = fetchadminProfileData.profile_img || null;
+
+    if (updPublicUrl) {
+      profile_pic_update.src = updPublicUrl;
+    } else {
+      profile_pic_update.src = "https://www.shutterstock.com/image-vector/avatar-gender-neutral-silhouette-vector-600nw-2470054311.jpg";
+    }
+
+  } catch (fetchErr) {
+    console.error("Error fetching profile:", fetchErr);
+  }
+
+  // Change profile picture
+  chanagePicture?.addEventListener("click", () => profileUpdate?.click());
+
+  // Handle file selection
+  profileUpdate?.addEventListener("change", async () => {
+    try {
+      const file = profileUpdate.files[0];
+      if (!file) return;
+
+      const fileName = file.name;
+
+      // Loading SweetAlert
+      Swal.fire({
+        title: "Uploading Picture...",
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
+      const { data, error } = await client
+        .storage
+        .from('ecommerce_profile')
+        .upload(fileName, file, { upsert: true });
+
+      if (error) throw error;
+
+      const { data: profileUrl } = client
+        .storage
+        .from('ecommerce_profile')
+        .getPublicUrl(fileName);
+
+      updPublicUrl = profileUrl.publicUrl;
+      profile_pic_update.src = updPublicUrl;
+      console.log("Profile picture updated:", updPublicUrl);
+
+      Swal.close(); // close loading
+      Swal.fire({
+        icon: "success",
+        title: "Uploaded!",
+        text: "Profile picture updated successfully.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+    } catch (uploadErr) {
+      console.error("Upload error:", uploadErr);
+      Swal.fire({
+        icon: "error",
+        title: "Upload Failed",
+        text: "Failed to upload profile picture!",
+      });
+    }
+  });
+
+  // Save updated profile
+  saveBtn?.addEventListener("click", async () => {
+    try {
+      if (!fullname_.value || !profile_email.value) {
+        return Swal.fire({
+          icon: "warning",
+          title: "Missing Fields",
+          text: "Please fill in both name and email",
+        });
+      }
+
+      // Loading SweetAlert
+      Swal.fire({
+        title: "Updating Profile...",
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
+      const { error } = await client
+        .from("all-users-data")
+        .update({
+          name: fullname_.value,
+          email: profile_email.value,
+          profile_img: updPublicUrl,
+        })
+        .eq("user_id", adminUserid);
+
+      if (error) throw error;
+
+      Swal.fire({
+        icon: "success",
+        title: "Profile Updated!",
+        text: "Your profile has been updated successfully.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      // Optional: redirect after a short delay
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1600);
+
+    } catch (saveErr) {
+      console.error("Update failed:", saveErr);
+      Swal.fire({
+        icon: "error",
+        title: "Update Failed",
+        text: "Failed to update profile! Please try again.",
+      });
+    }
+  });
+
+
+  // Delete profile picture
+
+  deletPicture?.addEventListener("click", async () => {
+    try {
+      // agar picture hi nahi
+      if (!updPublicUrl) {
+        Swal.fire({
+          icon: "info",
+          title: "No Picture",
+          text: "There is no profile picture to delete.",
+        });
+        profile_pic_update.src =
+          "https://www.shutterstock.com/image-vector/avatar-gender-neutral-silhouette-vector-600nw-2470054311.jpg";
+        return;
+      }
+
+      // confirmation alert
+      const result = await Swal.fire({
+        title: "Are you sure?",
+        text: "Your profile picture will be permanently deleted!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#dc2626",
+        cancelButtonColor: "#6b7280",
+        confirmButtonText: "Yes, delete it",
+      });
+
+      if (!result.isConfirmed) return;
+
+      // Extract file path from public URL
+      const url = new URL(updPublicUrl);
+      const filePath = url.pathname.split("/").slice(4).join("/");
+
+      const { data, error } = await client.storage
+        .from("ecommerce_profile")
+        .remove([filePath]);
+
+      if (error) throw error;
+
+      // reset image
+      profile_pic_update.src =
+        "https://www.shutterstock.com/image-vector/avatar-gender-neutral-silhouette-vector-600nw-2470054311.jpg";
+      updPublicUrl = null;
+
+      // DB se bhi remove
+      const { error: updateErr } = await client
+        .from("all-users-data")
+        .update({ profile_img: null })
+        .eq("user_id", adminUserid);
+
+      if (updateErr) {
+        console.error("DB update error:", updateErr);
+      }
+
+      Swal.fire({
+        icon: "success",
+        title: "Deleted!",
+        text: "Profile picture has been deleted successfully.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+    } catch (deleteErr) {
+      console.error("Error deleting profile picture:", deleteErr);
+
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Failed to delete profile picture. Please try again.",
+      });
+    }
+  });
+
+
+} catch (authErr) {
+  console.error("Error getting user:", authErr);
+}
+
+
+// ======user & product count========
+
+
+const userTable = document.getElementById("userTable");
+const userCount = document.getElementById("userCount");
+
+try {
+  const { data: showuserCount, error: countErr } = await client
+    .from('all-users-data')
+    .select('*')
+  userCount.innerHTML = showuserCount.length
+
+  if (countErr) throw countErr;
+
+  if (userTable) userTable.innerHTML = "";
+
+  showuserCount.forEach(user => {
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+  <td class="p-3">
+    <div class="flex items-center gap-3">
+      <img 
+        class="w-10 h-10 rounded-full border border-gray-200 object-cover"
+        src="${user.profile_img || 'https://via.placeholder.com/40'}"
+        alt="profile"
+      >
+      <span class="text-gray-700 font-medium">
+        ${user.name || "-"}
+      </span>
+    </div>
+  </td>
+
+  <td class="p-3 text-gray-700">${user.user_id || "-"}</td>
+  <td class="p-3 text-gray-700">${user.email || "-"}</td>
+
+    `;
+
+    userTable.appendChild(row);
+  });
+
+} catch (err) {
+  console.error("Error fetching users:", err);
+}
+
+
+
+// ======TOTAL PRODUCT======
+const totalProduct = document.getElementById("totalProduct")
+
+const { data: showProduct, error: productError } = await client
+  .from('product_detail')
+  .select('*');
+
+if (productError) {
+  console.error(productError);
+} else {
+  console.log("Total product:", showProduct.length);
+  totalProduct.textContent = showProduct.length
+}
+
+
+// ======ORDER PLACED======
+const order_placed = document.getElementById("order_placed")
+
+const { data: order_placedData, error: order_placedErr } = await client
+  .from('order_placed')
+  .select('*');
+
+if (productError) {
+  console.error(order_placedErr);
+} else {
+  console.log("order placed", order_placedData.length);
+  order_placed.textContent = order_placedData.length
+}
