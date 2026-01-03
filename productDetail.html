@@ -73,11 +73,15 @@
           <span class="font-poppins font-bold text-md">(+021) 345 678 910</span>
         </div>
         <div class="flex items-center gap-4 text-base">
-          
+
           <a href="signup.html"><i class="fa-regular fa-user"></i></a>
 
           <div id="cartIcon" class="relative">
             <i class=" fa-solid fa-bag-shopping"></i>
+          </div>
+
+          <div id="logout" class="relative cursor-pointer">
+            <i class="fa-solid fa-right-from-bracket"></i>
           </div>
 
         </div>
@@ -89,8 +93,12 @@
           <i class="fa-regular fa-user"></i>
         </a>
 
-        <div class="relative">
-          <i class="fa-solid fa-bag-shopping"></i>
+        <div id="mobileCartIcon" class="relative">
+          <i class=" fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <div id="mobilelogout" class="relative cursor-pointer">
+          <i class="fa-solid fa-right-from-bracket"></i>
         </div>
 
         <!-- TOGGLE -->
@@ -384,6 +392,7 @@
 
   <script type="module" src="productDetail.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -159,12 +159,19 @@ closeDrawer.addEventListener("click", closeDrawerFunc)
 async function addToCart() {
 
   const { data: { user }, error } = await client.auth.getUser()
-
   if (!user) {
-    alert("please login first!")
-    window.location.href = "login.html"
-    return
+    Swal.fire({
+      title: 'Oops!',
+      text: 'Please login first!',
+      icon: 'warning',
+      confirmButtonColor: '#4f46e5',
+      confirmButtonText: 'Login Now'
+    }).then(() => {
+      window.location.href = "login.html";
+    });
+    return;
   }
+
 
   // Check if product already in cart
   const existingItem = cart.find(item => item.id === currentProduct.id);
